@@ -1,0 +1,65 @@
+/**
+ * 2012-10-24
+ */
+
+    Setup PHPUnit on this workstation.
+    Setup PHPUnit in Aptana.  This was a bit tricky since I forgot, but here's how I did it:
+        1. right click on toolbar, "customize perspective > command groups availability > external tools"
+        2. external tools configuration: created new external tool:
+            location: ${phpunit} which was set to be /Applications/MAMP/bin/php/php5.3.6/bin/phpunit
+            working directory: ${container_loc}
+            arguments: ${resource_name}
+    Setup Github on this workstation (sent pub ssh key to Github).
+    Forked project
+    Read requirements
+    Here is how I want to handle it:
+        Make a local service that will mirror the remote service, but leave in room for controls like sort, offset, number, etc, just in case we want to make AJAX calls
+        
+        Output files will exist for each API of interest, this file is based off the original GET param in the API call.
+        
+        When user visits LocalService, it will check for output file
+            if output file exists {
+                if data is within window (24 hours) {
+                    return data
+                } else {
+                    get data
+                    if data successful {
+                        return data
+                    } else {
+                        report old data 
+                    }  
+                }
+            } else {
+                get data  
+                if data successful {
+                    return data
+                } else {
+                    return error
+                } 
+            } 
+                
+        DataCacher class will read the data from API, but it does not validate the data (keep it agnostic).
+        
+        ApiChecker class will check to see whether the JSON returned indicates successful read
+        
+        DataCacher class will write the data from API if ApiChecker gives the OK
+    
+    Got DataCacher working
+
+/**
+ * 2012-10-25
+ */
+
+    Didn't get much time to work on this today.  Refactored it so that I'm using DataCache to read/write/update local cache file from source url.  LocalService is what validates data and passes it to the front end.
+    
+    Starting to think about how to handle frontend to meet requirements.
+
+/**
+ * 2012-10-26
+ */
+
+    Tweaked the local-data-service so that it can be used with AJAX call from front end.
+    
+    Finished the front end.  Most time-consuming part was creating the art.  Wish I had more time to understand the feed.
+    
+    Ready for submission!
