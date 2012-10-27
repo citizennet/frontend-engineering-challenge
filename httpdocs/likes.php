@@ -1,5 +1,4 @@
 <?php
-$posts = 'http://rack1.citizennet.com/interviewtest/api?file=posts.json&access_token=AAAAAL2uajO8BAPcqOwZB6';
 $likes = 'http://rack1.citizennet.com/interviewtest/api?file=likes.json&access_token=AAAAAL2uajO8BAPcqOwZB6';
 ?>    
 <!DOCTYPE html>
@@ -27,7 +26,7 @@ $likes = 'http://rack1.citizennet.com/interviewtest/api?file=likes.json&access_t
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
         <div id="wrapper">
-            <h1>Posts</h1>
+            <h1>Likes</h1>
             <nav>
                 <a href="#" id="prev"><img src="img/prev-sprite.png" alt="Previous"/></a>
                 <a href="#" id="next"><img src="img/next-sprite.png" alt="next"/></a>
@@ -56,7 +55,7 @@ $likes = 'http://rack1.citizennet.com/interviewtest/api?file=likes.json&access_t
             
             jQuery.getJSON(
                 'local-data-service',
-                {url:'<?php echo $posts ?>'},
+                {url:'<?php echo $likes ?>'},
                 handleLoadComplete
             );                
             
@@ -82,10 +81,8 @@ $likes = 'http://rack1.citizennet.com/interviewtest/api?file=likes.json&access_t
                 postContainer.fadeOut('slow',function(){
                     jQuery(this).empty();
                     var data = getPost(num);
-                    var date = new Date(data['created_time']);
-                    postContainer.append('<p>'+ data['message'] +'</p>');
-                    postContainer.append('<p class="date">'+date.toLocaleString()+'</p>');
-                    postContainer.append('<a href="'+ data['link'] +'">View Post</a>');
+                    postContainer.append('<p>'+ data['name'] +'</p>');
+                    postContainer.append('<p>'+ data['id'] +'</p>');
                     postContainer.fadeIn('slow',function(){
                         jQuery('.logo').addClass('active');
                     });
@@ -137,6 +134,7 @@ $likes = 'http://rack1.citizennet.com/interviewtest/api?file=likes.json&access_t
                         displayPost(currentPost);
                         break;  
                 }
+
             }
             
             function showBtn(btn){
