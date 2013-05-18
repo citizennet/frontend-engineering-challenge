@@ -55,7 +55,7 @@ def likes():
             %s</p>
         </div>
             """ % (name, id, category)
-            
+
         html_final = html_start + html_content + html_end
         writer.write(html_final)
         return True
@@ -120,7 +120,7 @@ if __name__ == "__main__":
     print "Starting CitizenNet API program..."
     while True:
         print "\nThere are %s jobs in the queue" % len(jobs)
-        # All failed jobs will be added to failed_jobs
+        # All failed jobs will be added to failed_jobs to be rerun
         failed_jobs = []
         while len(jobs) > 0:
             job = jobs.pop(0)
@@ -135,6 +135,8 @@ if __name__ == "__main__":
                 # The task failed, add task to failed_jobs list
                 print "[FAILURE]   Job failed."
                 failed_jobs.append(job)
+
+        # If there were failed jobs, add them back to the jobs list to be rerun
         if len(failed_jobs) > 0:
             for job in failed_jobs:
                 # Check if we've reached the max number of retries
