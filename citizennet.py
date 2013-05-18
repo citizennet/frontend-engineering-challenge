@@ -55,6 +55,7 @@ def likes():
             %s</p>
         </div>
             """ % (name, id, category)
+            
         html_final = html_start + html_content + html_end
         writer.write(html_final)
         return True
@@ -89,6 +90,7 @@ def posts():
         html_content = ""
         for item in result["data"]:
             name = item["from"]["name"]
+            # Some posts do not have message field, set to blank if not found
             try:
                 message = item["message"]
             except:
@@ -100,6 +102,7 @@ def posts():
             <p>%s</p>
         </div>
             """ % (name, message)
+
         html_final = html_start + html_content + html_end
         writer.write(html_final)
         return True
