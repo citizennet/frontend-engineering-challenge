@@ -2,9 +2,8 @@
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Citizennet_model extends CI_Model {
-	
 	/**
-	 * Masters_model::__construct()
+	 * Citizennet_model::__construct()
 	 * 
 	 * @return
 	 */

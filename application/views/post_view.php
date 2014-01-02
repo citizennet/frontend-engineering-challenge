@@ -40,7 +40,6 @@
         </script>
 	</head>
 	<body class="left-sidebar">
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -159,10 +158,7 @@
 								</ul>
 							</nav>
 
-					
 					</div>
-
 			</div>
-
 	</body>
 </html>
