@@ -1,3 +1,14 @@
+.container::after, .stats:after {
+  clear: both;
+  display: block;
+  content: '';
+}
+
+.likes {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
 .post {
     float: left;
     position: relative;
@@ -5,12 +16,6 @@
     margin-right: 10px;
     height: 330px;
     width: 350px;
-}
-
-.container::after, .stats:after {
-  clear: both;
-  display: block;
-  content: '';
 }
 
 .from {
@@ -30,7 +35,7 @@
     background-color: #eee;
 }
 
-.likes, .comments {
+.action {
     float: left;
     width: 175px;
 }

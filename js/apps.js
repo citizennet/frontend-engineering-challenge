@@ -13,11 +13,11 @@ var createPostHtml = function(post) {
 
     var $stats = $("<div class='stats'></div>");
     $stats.append(
-        $("<div class='likes'><a href='" + post.actions[1].link + "'>" + post.actions[1].name + "</a> " +
+        $("<div class='action'><a href='" + post.actions[1].link + "'>" + post.actions[1].name + "</a> " +
          ((post.likes !== undefined) ? post.likes.count : 0) + "</div>"));
 
     $stats.append(
-        $("<div class='comments'><a href='" + post.actions[0].link + "'>" + post.actions[0].name + "</a> " +
+        $("<div class='action'><a href='" + post.actions[0].link + "'>" + post.actions[0].name + "</a> " +
             post.comments.count + "</div>"));
     $post.append($stats);
 
@@ -25,9 +25,10 @@ var createPostHtml = function(post) {
 };
 
 $(function() {
-    $.getJSON( "http://localhost:8888/frontend-engineering-challenge/Api.php?api=posts", function( data ) {
+    var $posts = [];
+
+    $.getJSON("http://localhost:8888/frontend-engineering-challenge/Api.php?api=posts", function(data) {
         var posts = data.data;
-        var $posts = [];
 
         var $header = $("<div class='header'></div>");
         $header.append($("<h1 class='from'></h1>").text(posts[0].from.name + "'s Facebook Page"));
@@ -37,10 +38,20 @@ $(function() {
             $posts.push(createPostHtml(value));
         });
 
+        $('.header').append($header.html());
+        $('.posts').append($posts);
+    });
 
-        var $container = $('.container');
-        $container.append($header);
-        $container.append($posts);
+    $.getJSON("http://localhost:8888/frontend-engineering-challenge/Api.php?api=likes", function(data) {
+        var likes = data.data;
+        var $list = $('<ul></ul>');
+        var $likes = [];
+
+        $.each(likes, function(key, value) {
+            console.log(value);
+            $likes.push($('<li></li>').text(value.name));
+        });
+        $('.likes').append($likes);
     });
 
 });
