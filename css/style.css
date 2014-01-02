@@ -1,0 +1,36 @@
+.post {
+    float: left;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 330px;
+    width: 350px;
+}
+
+.container::after, .stats:after {
+  clear: both;
+  display: block;
+  content: '';
+}
+
+.from {
+    font-weight: bold;
+}
+
+.category {
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 1.2em;
+    margin: 8px 0 8px 0;
+}
+
+.stats {
+    background-color: #eee;
+}
+
+.likes, .comments {
+    float: left;
+    width: 175px;
+}
