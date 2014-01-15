@@ -26,32 +26,42 @@
 		</div>
 	</div>
 	<div class="col-md-5">
+		<span  class="col-md-6">
+			<div ng-if="model.filter.comments==true">
+				Min Comments:
+				<input type="number" ng-model="model.filterAmount.comments.min" />
+				Max Comments:
+				<input type="number" ng-model="model.filterAmount.comments.max" />  
+				<alert ng-if="model.filterAmount.comments.max<model.filterAmount.comments.min" >Max value cannnot be less than Min Value!</alert>
+			</div>
+		</span>
 		<span class="col-md-6">
 			<div class="row">
 				<input type="checkbox" ng-model="model.filter.comments" ng-change="updateFilters('comments')" />
 				Filter Comments?
 			</div>
-			<div class="row" ng-if="model.filter.comments==true">
+			<div class="row pull-right" ng-if="model.filter.comments==true">
 				<h1>{{(data|filter:comments).length}}</h1>
 			</div>
 		</span>
-		<span ng-if="model.filter.comments==true" class="col-md-6">
-			Min Comments:
-			<input type="number" ng-model="model.filterAmount.comments.min" />
-			Max Comments:
-			<input type="number" ng-model="model.filterAmount.comments.max" />  
-			<alert ng-if="model.filterAmount.comments.max<model.filterAmount.comments.min" >Max value cannnot be less than Min Value!</alert>
-		</span>
+
 	</div>
 </div>
+<div class="row" ng-if="showGraph==true">
+	 <line-Chart data="filteredPosts"></line-Chart> 
+</div>
+<div class="row">
+	<button ng-click="seperatePosts();showGraph=true;graphStatus='Update'" class="btn col-md-12">{{graphStatus}} Graph</button>
+</div>
+
 <accordion close-others="true">
-	<div ng-repeat="post in data | filter:all">
-		 <accordion-group heading="{{post.message}}" >
+	<div ng-repeat="post in data | orderBy:post.likes.count | filter:all ">
+		 <accordion-group heading="{{post.created_time | date }} - {{post.message}}" >
 			<div class="col-md-2">
 				<img ng-src="{{post.picture}}" style="width:80%; padding:10%;" />
 			</div>
 			<div class="col-md-8">
-				<h4>{{post.message}}</h4>
+				<h4> <span ng-html-bind-unsafe>{{injectLinks(post.message)}}</span></h4>
 			</div>
 			<div class="col-md-1">
 				<div class="row">

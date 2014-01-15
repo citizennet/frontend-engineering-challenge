@@ -2,17 +2,68 @@
 app.controller('start',['$scope','$location','info', function ($scope,$location,info) {
 	$scope.header = info.returnHeader();
 	$scope.data = {}		
-
+	
+	/* Load the data, then assign to the Angular Scope */
 	var getData = function(){
 		info.getFile().then(function(data){
 			$scope.data = data.data; 
 		});
 	};
 	getData();
-	
+
+	/* Define the model that controls the bindings for the view */	
 	$scope.model = {filter:{likes:false,comments:false},filterAmount:{likes:{min:0,max:0},comments:{min:0,max:0}}};
 
-//<!--ng-if="post.likes.count>=model.filterAmount.likes.min && post.likes.count<=model.filterAmount.likes.max" !-->
+
+	/* Filter to weed out values based on likes and comments */
+	var allFilter = function(post){
+		var likes = post.likes==undefined ? 0 : post.likes.count; 
+		var comments = post.comments==undefined ? 0 : post.comments.count; 
+
+		var minLikes = $scope.model.filterAmount.likes.min;
+		var maxLikes = $scope.model.filterAmount.likes.max;
+		var minComments = $scope.model.filterAmount.comments.min;
+		var maxComments = $scope.model.filterAmount.comments.max;
+	
+		var filter=false;
+		if(minLikes==maxLikes && minComments==maxComments){
+			return post;
+		}
+
+
+		if((likes>=minLikes && likes<=maxLikes) && minComments+maxComments==0){
+			filter=true;
+		}
+		if((comments>=minComments && comments<=maxComments) &&  minLikes+maxLikes==0){
+			filter=true;
+		}
+		if(filter){
+			return post;
+		}else{
+			if(likes>=minLikes && likes<=maxLikes){
+				if(comments>=minComments && comments<=maxComments){
+					return post;filteredPosts
+				}
+			}
+		}
+		
+	};
+
+	/* copies the data, seperates it based on the filter */
+	$scope.seperatePosts = function(){
+		var newData = [];
+		for(var post=0;post<$scope.data.length;post++){
+			var result = allFilter($scope.data[post]); 
+			if (result!=undefined){
+				newData.push(result);
+			}
+		};
+		console.log(newData);
+		$scope.filteredPosts = newData; 
+	};
+
+
+	/* Same filter as above, but on the angular end of things */
 	$scope.all = function(post){
 		var likes = post.likes==undefined ? 0 : post.likes.count; 
 		var comments = post.comments==undefined ? 0 : post.comments.count; 
@@ -45,6 +96,8 @@ app.controller('start',['$scope','$location','info', function ($scope,$location,
 		}
 		
 	};
+	
+	/* Filter just for likes */
 	$scope.likes = function(post){
 		var likes = post.likes==undefined ? 0 : post.likes.count; 
 
@@ -63,6 +116,8 @@ app.controller('start',['$scope','$location','info', function ($scope,$location,
 
 		
 	};
+	
+	/* Filter just for comments */
 	$scope.comments = function(post){
 		var comments = post.comments==undefined ? 0 : post.comments.count; 
 
@@ -75,7 +130,7 @@ app.controller('start',['$scope','$location','info', function ($scope,$location,
 		}
 
 
-		if((comments>=minComments && comments<=maxComments)){
+		if((callFilteromments>=minComments && comments<=maxComments)){
 			return post;
 		}
 
@@ -95,15 +150,11 @@ app.controller('start',['$scope','$location','info', function ($scope,$location,
 			}
 		}
 	};
-}]);
 
-app.filter('likeSort', function() {
-	var functions = {};
-	functions = {
-		main:function(data) {
-			return data;
-		}
+	$scope.injectLinks = function(message){
+		return message;
 	};
 
-	return functions.main
-});
+	$scope.graphStatus = 'Show';
+}]);
+
