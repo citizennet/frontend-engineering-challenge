@@ -85,6 +85,5 @@ var run = function(){
 	};
 };
 
-//3600000
-var main = setInterval(function(){run();},(3000));
+var main = setInterval(function(){run();},(3600000));
 
