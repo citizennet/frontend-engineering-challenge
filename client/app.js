@@ -13,6 +13,21 @@ app.factory('info',['$http', function($http) {
 	action = {
 		returnHeader:function(){
 			return data.header; 
+		},
+		getFile:function(){
+			var route = '/API/file/'; 
+		  	var config = {
+				method: 'GET',
+				url: route
+			    };
+			    var promise = $http(config).then(function (response) {
+				if (response.status === 200) {
+				    return response.data;
+				} else {
+				    console.log(response.status);
+				}
+			    });
+			    return promise;
 		}
 	};
     return action;
