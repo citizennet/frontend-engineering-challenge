@@ -25,3 +25,5 @@ Here's what your web-based application must do:
 1. http://rack1.citizennet.com/interviewtest/api?file=posts.json&access_token=AAAAAL2uajO8BAPcqOwZB6
 1. http://rack1.citizennet.com/interviewtest/api?file=likes.json&access_token=AAAAAL2uajO8BAPcqOwZB6
 
+## How To Run? 
+Install node js; run npm install; run node server/server.js from the project directory; go to http://localhost:8080
