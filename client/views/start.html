@@ -6,8 +6,24 @@
 			<div class="col-md-2">
 				<img ng-src="{{post.picture}}" style="width:80%; padding:10%;" />
 			</div>
-			<div class="col-md-10">
+			<div class="col-md-8">
 				<h4>{{post.message}}</h4>
+			</div>
+			<div class="col-md-1">
+				<div class="row">
+					Likes
+				</div>
+				<div class="row">
+					<h2>{{post.likes.count || 0 }}</h2>
+				</div>
+			</div>
+			<div class="col-md-1">
+				<div class="row">
+					Comments
+				</div>
+				<div class="row">
+					<h2>{{post.comments.count || 0 }}</h2>
+				</div>
 			</div>
 		</accordion-group>
 	</div>
