@@ -4,7 +4,7 @@
 	<div class="col-md-5">
 		<span class="col-md-6">
 			<div class="row">
-				<input type="checkbox" ng-model="model.filter.likes" />
+				<input type="checkbox" ng-model="model.filter.likes" ng-change="updateFilters('likes')" />
 				Filter Likes?
 			</div>
 			<div class="row" ng-if="model.filter.likes==true">
@@ -28,7 +28,7 @@
 	<div class="col-md-5">
 		<span class="col-md-6">
 			<div class="row">
-				<input type="checkbox" ng-model="model.filter.comments" />
+				<input type="checkbox" ng-model="model.filter.comments" ng-change="updateFilters('comments')" />
 				Filter Comments?
 			</div>
 			<div class="row" ng-if="model.filter.comments==true">

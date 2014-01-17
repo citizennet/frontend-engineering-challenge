@@ -81,6 +81,20 @@ app.controller('start',['$scope','$location','info', function ($scope,$location,
 
 		
 	};
+	$scope.updateFilters = function(type){
+		if(type=='likes'){
+			if($scope.model.filter.likes==false){
+				$scope.model.filterAmount.likes.min=0;
+				$scope.model.filterAmount.likes.max=0;					
+			}
+		}
+		if(type=='comments'){
+			if($scope.model.filter.comments==false){
+				$scope.model.filterAmount.comments.min=0;
+				$scope.model.filterAmount.comments.max=0;					
+			}
+		}
+	};
 }]);
 
 app.filter('likeSort', function() {
