@@ -1,0 +1,7 @@
+# WebStorm IDE generated files #
+################################
+.idea
+
+# Node modules installed when using package.json and executing the command 'npm install'#
+#########################################################################################
+node_modules
