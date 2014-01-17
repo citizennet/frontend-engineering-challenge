@@ -27,7 +27,7 @@ server.use(express.logger('dev'));
 server.use(express.bodyParser());
 server.use(express.methodOverride());
 server.use(express.cookieParser());
-//server.use(express.static(path.join(__dirname, '../public')));
+server.use(express.static(path.join(__dirname, '../public')));
 server.use(express.favicon());
 
 /* This is the IE cache issue solution for Angular*/
@@ -40,6 +40,10 @@ server.use(function (req, res, next) {
 });
 
 server.use(server.router);
+
+server.get('/app', function (req, res) {
+    res.sendfile(path.join(__dirname, '../public/app/app.html'));
+});
 
 /* API Routes */
 server.get('/api/likes', likes.getLikes);
