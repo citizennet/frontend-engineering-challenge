@@ -41,7 +41,7 @@ server.use(function (req, res, next) {
 
 server.use(server.router);
 
-server.get('/app', function (req, res) {
+server.get('/', function (req, res) {
     res.sendfile(path.join(__dirname, '../public/app/app.html'));
 });
 
