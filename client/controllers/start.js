@@ -5,7 +5,7 @@ app.controller('start',['$scope','$location','info', function ($scope,$location,
 
 	var getData = function(){
 		info.getFile().then(function(data){
-			$scope.data = data; 
+			$scope.data = data.data; 
 		});
 	};
 	getData();
