@@ -1,8 +1,52 @@
 <h1>{{header}}</h1>
 
+<div class="row">
+	<div class="col-md-5">
+		<span class="col-md-6">
+			<div class="row">
+				<input type="checkbox" ng-model="model.filter.likes" />
+				Filter Likes?
+			</div>
+			<div class="row" ng-if="model.filter.likes==true">
+				<h1>{{(data|filter:likes).length}}</h1>
+			</div>
+		</span>
+		<span ng-if="model.filter.likes==true" class="col-md-6">
+			Min Likes:
+			<input type="number" ng-model="model.filterAmount.likes.min" />
+			Max Likes:
+			<input type="number" ng-model="model.filterAmount.likes.max" />  
+			<alert ng-if="model.filterAmount.likes.max<model.filterAmount.likes.min" >Max value cannnot be less than Min Value!</alert>
+		</span>
+	</div>
+	<div class="col-md-2 text-center">
+		<div class="row">Total</div>
+		<div class="row">
+			<h1>{{(data|filter:all).length}}</h1>
+		</div>
+	</div>
+	<div class="col-md-5">
+		<span class="col-md-6">
+			<div class="row">
+				<input type="checkbox" ng-model="model.filter.comments" />
+				Filter Comments?
+			</div>
+			<div class="row" ng-if="model.filter.comments==true">
+				<h1>{{(data|filter:comments).length}}</h1>
+			</div>
+		</span>
+		<span ng-if="model.filter.comments==true" class="col-md-6">
+			Min Comments:
+			<input type="number" ng-model="model.filterAmount.comments.min" />
+			Max Comments:
+			<input type="number" ng-model="model.filterAmount.comments.max" />  
+			<alert ng-if="model.filterAmount.comments.max<model.filterAmount.comments.min" >Max value cannnot be less than Min Value!</alert>
+		</span>
+	</div>
+</div>
 <accordion close-others="true">
-	<div ng-repeat="post in data">
-		 <accordion-group heading="{{post.message}}">
+	<div ng-repeat="post in data | filter:all">
+		 <accordion-group heading="{{post.message}}" >
 			<div class="col-md-2">
 				<img ng-src="{{post.picture}}" style="width:80%; padding:10%;" />
 			</div>
