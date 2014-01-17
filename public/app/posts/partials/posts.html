@@ -1,1 +1,65 @@
-<p>{{data}}</p>
+<div id="wrap">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Home</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#/posts">Post Data</a></li>
+                    <li><a href="#/likes">Like Data</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <div class="container">
+        <h1>Data from Posts File</h1>
+        <hr/>
+        <form class="form-inline" role="form">
+            Filter By:
+            <div class="form-group">
+                <label class="sr-only" for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Name" ng-model="post.from.name">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="category">Category</label>
+                <input type="text" class="form-control" id="category" placeholder="Category"
+                       ng-model="post.from.category">
+            </div>
+        </form>
+        <br/>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Category</td>
+                        <td>Likes</td>
+                        <td>Comments</td>
+                        <td>Post</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="post in posts.data | filter:post.from">
+                        <td>{{post.from.name}}</td>
+                        <td>{{post.from.category}}</td>
+                        <td><span class="label label-warning" ng-show="post.likes.count">{{post.likes.count}}</span>
+                        </td>
+                        <td><span class="label label-warning" ng-show="post.comments.count">{{post.comments.count}}</span>
+                        </td>
+                        <td><a href="{{post.link}}">View</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

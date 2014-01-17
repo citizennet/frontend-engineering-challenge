@@ -2,7 +2,7 @@ var likesModule = angular.module('likesModule', []);
 
 likesModule.controller('likesController', ['$scope', '$location', 'likesService', function ($scope, $location, likesService) {
 
-    $scope.data = likesService.getLikes().then(function (likes){
+    $scope.likes = likesService.getLikes().then(function (likes){
                   return likes;
     });
 

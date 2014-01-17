@@ -2,10 +2,9 @@ var postsModule = angular.module('postsModule', []);
 
 postsModule.controller('postsController', ['$scope', '$location', 'postsService', function ($scope, $location, postsService) {
 
-    $scope.data = postsService.getPosts().then(function (posts){
+    $scope.posts = postsService.getPosts().then(function (posts){
         return posts;
     });
-
 }]);
 
 
@@ -23,6 +22,7 @@ postsModule.factory('postsService', ['$http', function ($http) {
                 if (response.status === 200) {
                     return response.data;
                 } else {
+                    return response.data;
                     window.alert('Oh Snap! We got an HTTP ' + response.status + ' error. Try again later.');
                 }
             });

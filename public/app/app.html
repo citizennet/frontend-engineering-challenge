@@ -5,7 +5,10 @@
 
     <!-- Bootstrap Styles -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/flatly/bootstrap.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/yeti/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/app/common/stylesheets/style.css" rel="stylesheet">
 
     <!-- Angular -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
@@ -13,15 +16,23 @@
 
 </head>
 <body>
-<div ng-view></div>
-
+<div id="wrap">
+    <div ng-view></div>
+</div>
+<div id="footer">
+    <div class="container">
+        <div class="text-muted">
+        <span class="pull-right">&copy; Luis De Avila 2014</span>
+        </div>
+    </div>
+</div>
 
 <!-- Custom Angular Modules-->
 <script src="/app/dashboard/js/dashboard-module.js"></script>
 <script src="/app/likes/js/likes-module.js"></script>
 <script src="/app/posts/js/posts-module.js"></script>
 <!-- JQuery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </body>
