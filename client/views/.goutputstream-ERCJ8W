@@ -1,0 +1,9 @@
+<h1>{{data.sessionName}}</h1>
+<h3>{{data.description}}</h3>
+<div class="row-fluid">
+	<line-Chart data="data.score"></line-Chart>
+</div>
+<div ng-repeat = "user in data.analysis">
+	<pre>{{user.userAnalysis}}</pre>
+</div>
+
