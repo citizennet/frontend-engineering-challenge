@@ -1,0 +1,27 @@
+{
+  "name": "frontend-engineering-challenge",
+  "version": "0.0.0",
+  "description": "To better assess a candidates development skills, we would like to provide the following challenge.  You have as much time as you'd like (though we ask that you not spend more than a few hours).",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iHrushikesh/frontend-engineering-challenge.git"
+  },
+  "author": "Hrushikesh Deshmukh",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/iHrushikesh/frontend-engineering-challenge/issues"
+  },
+  "homepage": "https://github.com/iHrushikesh/frontend-engineering-challenge",
+  "dependencies": {
+    "restler": "~3.1.0",
+    "express": "~3.4.8",
+    "kue": "~0.6.2",
+    "redis": "~0.10.0",
+    "npmlog": "0.0.6",
+    "mongoose": "~3.8.4"
+  }
+}
