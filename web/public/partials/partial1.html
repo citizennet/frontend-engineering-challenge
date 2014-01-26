@@ -1,0 +1,22 @@
+<p ng-controller="MyCtrl1">
+
+
+      <div class="list-group" >
+
+		<div class="row">
+		  <div class="col-xs-4 col-md-offset-8">
+		    <input type="search" ng-model="q.$" placeholder="filter posts..." class="form-control"/>
+		  </div>
+		 </div>
+
+
+        <li  ng-repeat="post in posts | filter:q" class="list-group-item" >
+        <div class="row">
+         <div class="col-md-10" style="text-overflow:ellipsis;overflow:hidden; "> {{post.message}} </div> <div class="col-md-1" >
+         <img src="img/like.png" style="width: 20px; height: 20px;" alt="..." class="img-rounded"></img> {{post.likes.count}} </div>
+         <div class="col-md-1" >
+          <img src="img/comments.png" style="width: 20px; height: 20px;" alt="..." class="img-rounded"></img>  {{post.comments.count}}
+          </div>
+        </li>
+</div>
+</p>

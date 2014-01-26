@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 
 var log = require('npmlog');
+log.level = 'info';
+log.heading = 'Kue';
+
 var Schema=mongoose.Schema; 
 
 var AnySchema=new Schema({}, { strict: false });
@@ -8,15 +11,16 @@ var AnySchema=new Schema({}, { strict: false });
 exports.default=function(name,job,done){
     
     var AnyModel=mongoose.model(name,AnySchema);
-    log.verbose('Default processor','Started processing job=%j ',job.id);
+
+    log.info('Default processor','Started processing job=%j ',job.id);
    
-    var post=new AnyModel(job.data);
-    log.info('data','%j',job.data);
-    log.info('model','%j',post);
-    post.save(function(err,data){
+    var data=job.data;
+
+    var options={upsert:true};
+
+    AnyModel.findOneAndUpdate({id:data.id},data,options,function(err,data){
 	if(err){
 	    log.error('Default processor','Error while processing %j',job.id);
-	    //done(err);
 	}
 	if(data){
 	    done();
@@ -26,7 +30,7 @@ exports.default=function(name,job,done){
     
 }
 
-exports.likesProcessor=function(job,done){
+exports.likesProcessor=function(name,job,done){
     //save to db
     log.verbose('likesProcessor','started processing job=%j',job.id);
     done();
