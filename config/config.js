@@ -7,8 +7,8 @@ module.exports = {
         name:'posts',
         processor: 'default',
         options:{
-            hostname: 'http://enigmatic-badlands-4862.herokuapp.com',
-            path: '/posts.json',
+            hostname: 'http://rack1.citizennet.com',
+            path: '/interviewtest/api?file=posts.json&access_token=AAAAAL2uajO8BAPcqOwZB6',
             method: 'GET'
         }
       },
@@ -16,8 +16,8 @@ module.exports = {
         name:'likes',
         processor: 'likesProcessor',
         options:{
-            hostname: 'http://enigmatic-badlands-4862.herokuapp.com',
-            path: '/likes.json',
+            hostname: 'http://rack1.citizennet.com',
+            path: '/interviewtest/api?file=likes.json&access_token=AAAAAL2uajO8BAPcqOwZB6',
             method: 'GET'
         }
       }
