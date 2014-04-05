@@ -26,7 +26,28 @@ function goToAPI()
         }
     });
 
+    if(myJson!="{error:503}")
+    {
+        document.getElementById("AccessCode").value=myJson;
+        displayContent(myJson);
+    }
 
+}
+function displayContent(myJson)
+{
+
+    var Json=JSON.parse(myJson);
+   
+
+    for(i=0;i<Json.data.length;i++)
+    {
+
+        $("#mainContainer").append('<div class="container"><div class="container_header" ><label class="show" >'+item.from['name']+'</label><label class="timestamp">'+' on '+x+' '+( d.getDay()+1)+' at '+time+'</label></div><label class="show " style="color:black">'+item.description+'</label><span class="intensity">'+'1 like(s) ' +item.comments['count']+' comment(s)</span></div>');
+
+
+    }
+
+}
 }
 
 
