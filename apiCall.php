@@ -2,7 +2,7 @@
 $filename=$_GET['file'];
 $AccessCode=$_GET['AccessCode'];
 get_URL($filename,$AccessCode);
-function getContentFromURL($url,$arguments)
+function getContentFromURL($url,$arguments)   //passing url and args as params
 {
 $url=$url.'?file='.$arguments[0].'&access_token='.$arguments[1];
 $ch = curl_init();
@@ -11,11 +11,11 @@ curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
 curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,5);
 $content = curl_exec($ch);
 
-$requestStatus=curl_getinfo($ch,CURLINFO_HTTP_CODE);
+$requestStatus=curl_getinfo($ch,CURLINFO_HTTP_CODE);  //get status code for 503 errors
 if($requestStatus==503)
 {
 
-  $content="error";
+  $content="{error:503}";
    /* echo("503 occured");
     curl_close($ch);
     getContentFromURL($url,$arguments);*/
@@ -35,16 +35,16 @@ $filePath="Cache/posts.txt";
 if(file_exists($filePath))
 {
 
-if(checkTimeStamp($filePath))
+if(checkTimeStamp($filePath))     //if cache time beyond one day
 {    //  echo("CACHE TIME EXPIRED");
     $content=getContentFromURL($base_url,$arguments);
-   if($content!="error")
+   if($content!="{error:503}")
     saveToFile($filePath,$content);
 
 }
   else
   {
-      $content=file_get_contents($filePath);
+      $content=file_get_contents($filePath);     //else if file read before 24 hours read from file
   // echo("READ FRIM FILE");
 
   }
@@ -53,7 +53,6 @@ if(checkTimeStamp($filePath))
  {
      $content=getContentFromURL($base_url,$arguments);
      saveToFile($filePath,$content);
-   //  echo("FILE CREATED");
  }
 processContent($content,$base_url,$arguments);
 }
@@ -66,26 +65,24 @@ function saveToFile($filePath,$content)
 }
 function processContent($content,$url,$arguments)
 {
- if($content=="error")
- { $content=getContentFromURL($url,$arguments);}
+ if($content=="{error:503}")
+ { $content=getContentFromURL($url,$arguments);
+     $json=json_decode($content,true);
+     echo $content;}
 else
 {
  $json=json_decode($content,true);
     $i=0;
-    var_dump($json);
-    // var_dump($json['data'][0]['from']);
-     /*  foreach( $json['data'][$i] as $item) {
-         $item['']
-        $i=$i+1;
-    }*/
-    echo $content;
+
+
+    echo $content;     //pass json as return
 }
 
 }
 
 function checkTimeStamp($filePath)
 {
-    $cacheTime =(10);
+    $cacheTime =(24*60*60);            //cache time of one day
     $LastModified=filemtime($filePath) + $cacheTime;
    if($LastModified<time())
        return true;
