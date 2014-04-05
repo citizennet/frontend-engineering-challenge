@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<script src="http://code.jquery.com/jquery-2.1.0.js" type="application/javascript"/>
+<script type="text/javascript">
+function goToAPI()
+{
+    var AccessCode=document.getElementById("AccessCode");
+    $.ajax({
+
+        type: 'GET',
+        url: "localhost:8081/APIcall.php?file=posts.json&AccessCode="+AccessCode,
+        async: false,
+        jsonpCallback: 'jsonCallback',
+        contentType: "application/json",
+        dataType: 'jsonp',
+        success: function(data)
+        {
+            var json=JSON.parse(data);
+        },
+        error: function(e)
+        {
+            alert(e.message);
+        }
+    });
+
+
+}
+
+
+</script>
+</head>
+<body>
+<form action="goToAPI()" name="myForm">
+<input id="AccessCode" type="text" name="AccessCode" placeholder="Enter Access Code"><br>
+<input type="button" name="LikesAndPosts" value="Display Likes/Posts">
+</form>
+
+</body>
+</html>
