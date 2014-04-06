@@ -62,7 +62,7 @@
         .container_header{
             width: 100%;
             height: 35px;
-            background-color: #506C6C;
+            background-color: #575956;
             border: solid 1px;
 
         }
@@ -99,21 +99,18 @@ document.getElementById("mainContainer").innerHTML="";
 
 
                 if(temp!="{error:503}")
-
-            document.getElementById("AccessCode").value=temp;
             myJson=temp;
 
         },
         error: function(e)
         {
-            document.getElementById("AccessCode").value="bleh";
-            alert(e.message);
+
+            alert("Try Again");
         }
     });
 
 if(myJson!="{error:503}")
 {
-    document.getElementById("AccessCode").value=myJson;
     displayContent(myJson);
 }
 
@@ -143,6 +140,9 @@ if(myJson!="{error:503}")
             datetime = item.updated_time.split('T');
             var d=new Date(datetime[0]);
            var x= month[d.getMonth()];
+            var year= d.getFullYear();
+            if(year== new Date().getFullYear)
+                   year="";
             var abc=datetime[1].split('+');
             var t=abc[0].split(':');
             if(t[0]>12)
@@ -153,7 +153,7 @@ if(myJson!="{error:503}")
                time=(t[0])+':'+t[1]+'AM';
             if(item.description==undefined)
                 item.description="not avalable";
-           $("#mainContainer").append('<div class="container"><div class="container_header" ><label class="show" >'+item.from['name']+'</label><label class="timestamp">'+' on '+x+' '+( d.getDay()+1)+' at '+time+'</label></div><label class="show " style="color:black">'+item.description+'</label><span class="intensity">'+'1 like(s) ' +item.comments['count']+' comment(s)</span></div>');
+           $("#mainContainer").append('<div class="container"><div class="container_header" ><label class="show" >'+item.from['name']+'</label><label class="timestamp">'+' on '+x+' '+( d.getDay()+1)+' '+year+' at '+time+'</label></div><label class="show " style="color:black">'+item.description+'</label><span class="intensity">'+'1 like(s) ' +item.comments['count']+' comment(s)</span></div>');
 
 
       }
