@@ -92,7 +92,7 @@ document.getElementById("mainContainer").innerHTML="";
     $.ajax({
 
         type: 'GET',
-        url: "http://localhost:8081/APIcall.php?file=posts.json&AccessCode="+AccessCode,
+        url: "APIcall.php?file=posts.json&AccessCode="+AccessCode,
         async: false,
         success: function(temp)
         {
@@ -157,6 +157,25 @@ if(myJson!="{error:503}")
 
 
       }
+        $.ajax({
+
+            type: 'GET',
+            url: "APIcall.php?file=likes.json&AccessCode="+AccessCode,
+            async: false,
+            success: function(temp)
+            {
+
+
+                if(temp!="{error:503}")
+                    myJson=temp;
+
+            },
+            error: function(e)
+            {
+
+                alert("Try Again");
+            }
+        });
 
     }
 
