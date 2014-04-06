@@ -3,61 +3,177 @@
 <html>
 
 <head>
-<script src="http://code.jquery.com/jquery-2.1.0.js" type="application/javascript"/>
+    <style>
+
+        .form_container
+        {
+            width:95%;
+            height: 300px;
+           padding-right: 20px;
+            padding-top: 5px;
+
+            background-image: url('http://fc07.deviantart.net/fs70/i/2012/089/7/3/gray_website_background_by_maruron-d4ugudv.jpg');
+        }
+        .form
+        {
+           float:right;
+
+        }
+        .button
+        {
+            background:#282D2D;
+            color:white;
+            padding: 8px;
+            border-radius: 5px;
+
+
+        }
+        .container {
+            width: 95%;
+            height: auto;
+            float: left;
+            margin: 9px 5px;
+           border: solid 1px;
+            border-color: #666;
+
+        }
+        .borders
+        {
+           border:2px solid #a1a1a1;
+            padding:10px 40px;
+            width:200px;
+            border-radius:25px;
+        }
+        .show
+        {
+
+            padding-right: 2px;
+            padding-left: 2px;
+            margin: 3px;
+            font-style: normal;
+            font-weight: 400;
+            overflow-y: auto;
+            overflow-x: auto;
+            float: left;
+
+            word-wrap: break-word;
+            color:white;
+        }
+        .container_header{
+            width: 100%;
+            height: 35px;
+            background-color: #506C6C;
+            border: solid 1px;
+
+        }
+        .timestamp {
+            float: right;
+            height: 10px;
+            font-weight: 400;
+            margin-right: 3px;
+            margin: 3px;
+            color:white;
+        }
+        .intensity {
+            float: left;
+            height: auto;
+            margin-right:3px;
+            clear:left;
+            padding:3px;
+        }
+    </style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript">
-function goToAPI()
+function callAPI()
 {
-    var AccessCode=document.getElementById("AccessCode");
+var myJson;
+document.getElementById("mainContainer").innerHTML="";
+    var AccessCode=document.getElementById("AccessCode").value;
     $.ajax({
 
         type: 'GET',
-        url: "localhost:8081/APIcall.php?file=posts.json&AccessCode="+AccessCode,
+        url: "http://localhost:8081/APIcall.php?file=posts.json&AccessCode="+AccessCode,
         async: false,
-        jsonpCallback: 'jsonCallback',
-        contentType: "application/json",
-        dataType: 'jsonp',
-        success: function(data)
+        success: function(temp)
         {
-            var json=JSON.parse(data);
+
+
+                if(temp!="{error:503}")
+
+            document.getElementById("AccessCode").value=temp;
+            myJson=temp;
+
         },
         error: function(e)
         {
+            document.getElementById("AccessCode").value="bleh";
             alert(e.message);
         }
     });
 
-    if(myJson!="{error:503}")
-    {
-        document.getElementById("AccessCode").value=myJson;
-        displayContent(myJson);
-    }
-
-}
-function displayContent(myJson)
+if(myJson!="{error:503}")
 {
+    document.getElementById("AccessCode").value=myJson;
+    displayContent(myJson);
+}
 
-    var Json=JSON.parse(myJson);
-   
-
-    for(i=0;i<Json.data.length;i++)
+}
+    function displayContent(myJson)
     {
 
-        $("#mainContainer").append('<div class="container"><div class="container_header" ><label class="show" >'+item.from['name']+'</label><label class="timestamp">'+' on '+x+' '+( d.getDay()+1)+' at '+time+'</label></div><label class="show " style="color:black">'+item.description+'</label><span class="intensity">'+'1 like(s) ' +item.comments['count']+' comment(s)</span></div>');
+        var Json=JSON.parse(myJson);
+                  var i=0;
+        var month=new Array();
+        month[0]="Jan";
+        month[1]="Feb";
+        month[2]="March";
+        month[3]="April";
+        month[4]="May";
+        month[5]="Jun";
+        month[6]="Jul";
+        month[7]="Aug";
+        month[8]="Sept";
+        month[9]="Oct";
+        month[10]="Nov";
+        month[11]="Dec";
 
+        for(i=0;i<Json.data.length;i++)
+        {
+                 var item=Json.data[i];
+            datetime = item.updated_time.split('T');
+            var d=new Date(datetime[0]);
+           var x= month[d.getMonth()];
+            var abc=datetime[1].split('+');
+            var t=abc[0].split(':');
+            if(t[0]>12)
+            {
+                time=(t[0]-12)+':'+t[1]+'PM';
+            }
+            else
+               time=(t[0])+':'+t[1]+'AM';
+            if(item.description==undefined)
+                item.description="not avalable";
+           $("#mainContainer").append('<div class="container"><div class="container_header" ><label class="show" >'+item.from['name']+'</label><label class="timestamp">'+' on '+x+' '+( d.getDay()+1)+' at '+time+'</label></div><label class="show " style="color:black">'+item.description+'</label><span class="intensity">'+'1 like(s) ' +item.comments['count']+' comment(s)</span></div>');
+
+
+      }
 
     }
 
-}
-}
 
 
 </script>
+<title> </title>
 </head>
-<body>
-<form action="goToAPI()" name="myForm">
-<input id="AccessCode" type="text" name="AccessCode" placeholder="Enter Access Code"><br>
-<input type="button" name="LikesAndPosts" value="Display Likes/Posts">
+<body style="background-image: url('')">
+<div class="form_container">
+<form  name="myForm" class="form">
+<input type="text" class="borders" id="AccessCode" name="AccessCode" placeholder="Enter Access Code">
+<input type="button" class="button" id="submit" name="LikesAndPosts" value="Display Likes/Posts" onclick="return callAPI()">
 </form>
+</div>
+<div id="mainContainer">
 
+</div>
 </body>
 </html>
