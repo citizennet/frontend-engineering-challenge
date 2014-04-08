@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+ .jumbotron{
+ 	height:150px;
+ 	background-color:#3B5998;
+ 	color:#fff;
+ }
+ 
+ .header {
+     background-color: #3B5998;
+     color: #fff;
+     padding: 5px 0 5px 10px;
+ }
+ 
+ .data {
+     background-color: #eee;
+     margin-bottom: 20px;
+     padding: 5px 0 10px 10px;
+ }
+ .post {
+     float: left;
+     position: relative;
+     margin-left: 10px;
+     margin-right: 10px;
+     height: 350px;
+     width: 350px;
+ } 
+ 
+ .from {
+     font-weight: bold;
+ }
+ 
+ .category {
+     margin-bottom: 10px;
+ }
+ 
+ .name {
+     font-size: 1.2em;
+     margin: 8px 0 8px 0;
+ }
+ 
+ .actions {
+     background-color: #eee;
+ }
+ 
+ .action {
+     float: left;
+     width: 175px;
+ }
+ 
+ a:hover {
+     text-decoration: underline;
+ }
+ 
