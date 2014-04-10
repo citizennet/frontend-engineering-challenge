@@ -11,3 +11,13 @@
  *= require_self
  *= require_tree .
  */
+
+.post {
+  border: 2px solid red;
+  display: block;
+  width: 33%;
+  padding: 2em;
+}
+#posts {
+  border: 2px solid black;
+}
