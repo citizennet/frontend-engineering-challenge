@@ -20,7 +20,6 @@ development:
   database: citizennet_development
   pool: 5
   username: <%=`whoami`%>
-  password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,7 +47,11 @@ test:
   encoding: unicode
   database: citizennet_test
   pool: 5
+<<<<<<< HEAD
   username: <%=`whoami`%>
+=======
+  username: shawnbroukhim
+>>>>>>> master
   password:
 
 production:
@@ -56,5 +59,9 @@ production:
   encoding: unicode
   database: citizennet_production
   pool: 5
+<<<<<<< HEAD
   username: <%=`whoami`%>
+=======
+  username: shawnbroukhim
+>>>>>>> master
   password:
