@@ -47,21 +47,11 @@ test:
   encoding: unicode
   database: citizennet_test
   pool: 5
-<<<<<<< HEAD
   username: <%=`whoami`%>
-=======
-  username: shawnbroukhim
->>>>>>> master
-  password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: citizennet_production
   pool: 5
-<<<<<<< HEAD
   username: <%=`whoami`%>
-=======
-  username: shawnbroukhim
->>>>>>> master
-  password:
