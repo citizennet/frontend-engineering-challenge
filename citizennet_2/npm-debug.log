@@ -1,0 +1,512 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/0.10.24/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'express-generator' ]
+2 info using npm@1.3.21
+3 info using node@v0.10.24
+4 verbose cache add [ 'express-generator', null ]
+5 verbose cache add name=undefined spec="express-generator" args=["express-generator",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'express-generator',
+6 verbose parsed url   path: 'express-generator',
+6 verbose parsed url   href: 'express-generator' }
+7 silly lockFile 198a68d8-express-generator express-generator
+8 verbose lock express-generator /Users/shawnbroukhim/.npm/198a68d8-express-generator.lock
+9 silly lockFile 198a68d8-express-generator express-generator
+10 silly lockFile 198a68d8-express-generator express-generator
+11 verbose addNamed [ 'express-generator', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile bd41e3d3-express-generator express-generator@
+14 verbose lock express-generator@ /Users/shawnbroukhim/.npm/bd41e3d3-express-generator.lock
+15 silly addNameRange { name: 'express-generator', range: '*', hasData: false }
+16 verbose url raw express-generator
+17 verbose url resolving [ 'https://registry.npmjs.org/', './express-generator' ]
+18 verbose url resolved https://registry.npmjs.org/express-generator
+19 info trying registry request attempt 1 at 14:33:06
+20 verbose etag "2OBIKL14USNWEHEKMZD6VYGXH"
+21 http GET https://registry.npmjs.org/express-generator
+22 http 304 https://registry.npmjs.org/express-generator
+23 silly registry.get cb [ 304,
+23 silly registry.get   { date: 'Thu, 10 Apr 2014 18:33:05 GMT',
+23 silly registry.get     server: 'Apache',
+23 silly registry.get     via: '1.1 varnish',
+23 silly registry.get     'last-modified': 'Thu, 10 Apr 2014 18:33:06 GMT',
+23 silly registry.get     'cache-control': 'max-age=1',
+23 silly registry.get     etag: '"2OBIKL14USNWEHEKMZD6VYGXH"',
+23 silly registry.get     'x-served-by': 'cache-jfk1029-JFK',
+23 silly registry.get     'x-cache': 'HIT',
+23 silly registry.get     'x-cache-hits': '1',
+23 silly registry.get     'x-timer': 'S1397154785.998780966,VS0,VE97',
+23 silly registry.get     vary: 'Accept',
+23 silly registry.get     'content-length': '0',
+23 silly registry.get     'keep-alive': 'timeout=10, max=50',
+23 silly registry.get     connection: 'Keep-Alive' } ]
+24 verbose etag express-generator from cache
+25 silly addNameRange number 2 { name: 'express-generator', range: '*', hasData: true }
+26 silly addNameRange versions [ 'express-generator', [ '1.0.0', '3.0.0', '4.0.0' ] ]
+27 verbose addNamed [ 'express-generator', '4.0.0' ]
+28 verbose addNamed [ '4.0.0', '4.0.0' ]
+29 silly lockFile 90c7528a-express-generator-4-0-0 express-generator@4.0.0
+30 verbose lock express-generator@4.0.0 /Users/shawnbroukhim/.npm/90c7528a-express-generator-4-0-0.lock
+31 silly lockFile 90c7528a-express-generator-4-0-0 express-generator@4.0.0
+32 silly lockFile 90c7528a-express-generator-4-0-0 express-generator@4.0.0
+33 silly lockFile bd41e3d3-express-generator express-generator@
+34 silly lockFile bd41e3d3-express-generator express-generator@
+35 silly resolved [ { name: 'express-generator',
+35 silly resolved     description: 'Express\' application generator',
+35 silly resolved     version: '4.0.0',
+35 silly resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+35 silly resolved     contributors: [ [Object], [Object], [Object], [Object] ],
+35 silly resolved     dependencies: { commander: '1.3.2', mkdirp: '0.3.5' },
+35 silly resolved     keywords:
+35 silly resolved      [ 'express',
+35 silly resolved        'framework',
+35 silly resolved        'sinatra',
+35 silly resolved        'web',
+35 silly resolved        'rest',
+35 silly resolved        'restful',
+35 silly resolved        'router',
+35 silly resolved        'app',
+35 silly resolved        'api' ],
+35 silly resolved     repository: { type: 'git', url: 'git://github.com/expressjs/generator' },
+35 silly resolved     main: 'bin/express',
+35 silly resolved     bin: { express: './bin/express' },
+35 silly resolved     engines: { node: '>= 0.8.0' },
+35 silly resolved     readme: '[![express logo](http://f.cl.ly/items/0V2S1n0K1i3y1c122g04/Screen%20Shot%202012-04-11%20at%209.59.42%20AM.png)](http://expressjs.com/)\n\n  Fast, unopinionated, minimalist web framework for [node](http://nodejs.org).\n\n  [![Gittip](http://img.shields.io/gittip/visionmedia.png)](https://www.gittip.com/visionmedia/)\n\n## Quick Start\n\n The quickest way to get started with express is to utilize the executable `express(1)` to generate an application as shown below:\n\n Create the app:\n\n    $ npm install -g express-generator\n    $ express /tmp/foo && cd /tmp/foo\n\n Install dependencies:\n\n    $ npm install\n\n Rock and Roll\n\n    $ npm start\n\n## License\n\n(The MIT License)\n\nCopyright (c) 2009-2012 TJ Holowaychuk &lt;tj@vision-media.ca&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\'Software\'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+35 silly resolved     readmeFilename: 'README.md',
+35 silly resolved     bugs: { url: 'https://github.com/expressjs/generator/issues' },
+35 silly resolved     homepage: 'https://github.com/expressjs/generator',
+35 silly resolved     _id: 'express-generator@4.0.0',
+35 silly resolved     _from: 'express-generator@' } ]
+36 info install express-generator@4.0.0 into /usr/local/lib
+37 info installOne express-generator@4.0.0
+38 info /usr/local/lib/node_modules/express-generator unbuild
+39 verbose tar unpack /Users/shawnbroukhim/.npm/express-generator/4.0.0/package.tgz
+40 silly lockFile 2135fd25-b-node-modules-express-generator tar:///usr/local/lib/node_modules/express-generator
+41 verbose lock tar:///usr/local/lib/node_modules/express-generator /Users/shawnbroukhim/.npm/2135fd25-b-node-modules-express-generator.lock
+42 silly lockFile 682ebdb1-ress-generator-4-0-0-package-tgz tar:///Users/shawnbroukhim/.npm/express-generator/4.0.0/package.tgz
+43 verbose lock tar:///Users/shawnbroukhim/.npm/express-generator/4.0.0/package.tgz /Users/shawnbroukhim/.npm/682ebdb1-ress-generator-4-0-0-package-tgz.lock
+44 silly gunzTarPerm modes [ '755', '644' ]
+45 silly gunzTarPerm extractEntry package.json
+46 silly gunzTarPerm extractEntry .npmignore
+47 silly gunzTarPerm extractEntry README.md
+48 silly gunzTarPerm extractEntry LICENSE
+49 silly gunzTarPerm extractEntry bin/express
+50 silly gunzTarPerm extractEntry templates/css/style.css
+51 silly gunzTarPerm extractEntry templates/css/style.less
+52 silly gunzTarPerm extractEntry templates/css/style.scss
+53 silly gunzTarPerm extractEntry templates/css/style.styl
+54 silly gunzTarPerm extractEntry templates/ejs/error.ejs
+55 silly gunzTarPerm extractEntry templates/ejs/index.ejs
+56 silly gunzTarPerm extractEntry templates/hogan/error.hjs
+57 silly gunzTarPerm extractEntry templates/hogan/index.hjs
+58 silly gunzTarPerm extractEntry templates/jade/error.jade
+59 silly gunzTarPerm extractEntry templates/jade/index.jade
+60 silly gunzTarPerm extractEntry templates/jade/layout.jade
+61 silly gunzTarPerm extractEntry templates/js/app.js
+62 silly gunzTarPerm extractEntry templates/js/routes/index.js
+63 silly gunzTarPerm extractEntry templates/js/routes/users.js
+64 silly gunzTarPerm extractEntry templates/js/www
+65 silly lockFile 2135fd25-b-node-modules-express-generator tar:///usr/local/lib/node_modules/express-generator
+66 silly lockFile 2135fd25-b-node-modules-express-generator tar:///usr/local/lib/node_modules/express-generator
+67 silly lockFile 682ebdb1-ress-generator-4-0-0-package-tgz tar:///Users/shawnbroukhim/.npm/express-generator/4.0.0/package.tgz
+68 silly lockFile 682ebdb1-ress-generator-4-0-0-package-tgz tar:///Users/shawnbroukhim/.npm/express-generator/4.0.0/package.tgz
+69 info preinstall express-generator@4.0.0
+70 verbose readDependencies using package.json deps
+71 verbose readDependencies using package.json deps
+72 verbose cache add [ 'commander@1.3.2', null ]
+73 verbose cache add name=undefined spec="commander@1.3.2" args=["commander@1.3.2",null]
+74 verbose parsed url { protocol: null,
+74 verbose parsed url   slashes: null,
+74 verbose parsed url   auth: null,
+74 verbose parsed url   host: null,
+74 verbose parsed url   port: null,
+74 verbose parsed url   hostname: null,
+74 verbose parsed url   hash: null,
+74 verbose parsed url   search: null,
+74 verbose parsed url   query: null,
+74 verbose parsed url   pathname: 'commander@1.3.2',
+74 verbose parsed url   path: 'commander@1.3.2',
+74 verbose parsed url   href: 'commander@1.3.2' }
+75 verbose cache add name="commander" spec="1.3.2" args=["commander","1.3.2"]
+76 verbose parsed url { protocol: null,
+76 verbose parsed url   slashes: null,
+76 verbose parsed url   auth: null,
+76 verbose parsed url   host: null,
+76 verbose parsed url   port: null,
+76 verbose parsed url   hostname: null,
+76 verbose parsed url   hash: null,
+76 verbose parsed url   search: null,
+76 verbose parsed url   query: null,
+76 verbose parsed url   pathname: '1.3.2',
+76 verbose parsed url   path: '1.3.2',
+76 verbose parsed url   href: '1.3.2' }
+77 verbose addNamed [ 'commander', '1.3.2' ]
+78 verbose addNamed [ '1.3.2', '1.3.2' ]
+79 silly lockFile 2016e061-commander-1-3-2 commander@1.3.2
+80 verbose lock commander@1.3.2 /Users/shawnbroukhim/.npm/2016e061-commander-1-3-2.lock
+81 verbose cache add [ 'mkdirp@0.3.5', null ]
+82 verbose cache add name=undefined spec="mkdirp@0.3.5" args=["mkdirp@0.3.5",null]
+83 verbose parsed url { protocol: null,
+83 verbose parsed url   slashes: null,
+83 verbose parsed url   auth: null,
+83 verbose parsed url   host: null,
+83 verbose parsed url   port: null,
+83 verbose parsed url   hostname: null,
+83 verbose parsed url   hash: null,
+83 verbose parsed url   search: null,
+83 verbose parsed url   query: null,
+83 verbose parsed url   pathname: 'mkdirp@0.3.5',
+83 verbose parsed url   path: 'mkdirp@0.3.5',
+83 verbose parsed url   href: 'mkdirp@0.3.5' }
+84 verbose cache add name="mkdirp" spec="0.3.5" args=["mkdirp","0.3.5"]
+85 verbose parsed url { protocol: null,
+85 verbose parsed url   slashes: null,
+85 verbose parsed url   auth: null,
+85 verbose parsed url   host: null,
+85 verbose parsed url   port: null,
+85 verbose parsed url   hostname: null,
+85 verbose parsed url   hash: null,
+85 verbose parsed url   search: null,
+85 verbose parsed url   query: null,
+85 verbose parsed url   pathname: '0.3.5',
+85 verbose parsed url   path: '0.3.5',
+85 verbose parsed url   href: '0.3.5' }
+86 verbose addNamed [ 'mkdirp', '0.3.5' ]
+87 verbose addNamed [ '0.3.5', '0.3.5' ]
+88 silly lockFile 67d2df2a-mkdirp-0-3-5 mkdirp@0.3.5
+89 verbose lock mkdirp@0.3.5 /Users/shawnbroukhim/.npm/67d2df2a-mkdirp-0-3-5.lock
+90 verbose url raw commander/1.3.2
+91 verbose url resolving [ 'https://registry.npmjs.org/', './commander/1.3.2' ]
+92 verbose url resolved https://registry.npmjs.org/commander/1.3.2
+93 info trying registry request attempt 1 at 14:33:07
+94 verbose etag "5DYRWQDHS41K7IT7NFJDM1UK8"
+95 http GET https://registry.npmjs.org/commander/1.3.2
+96 verbose url raw mkdirp/0.3.5
+97 verbose url resolving [ 'https://registry.npmjs.org/', './mkdirp/0.3.5' ]
+98 verbose url resolved https://registry.npmjs.org/mkdirp/0.3.5
+99 info trying registry request attempt 1 at 14:33:07
+100 verbose etag "ARQBLID1NJGBQ0K57C3QRAEQ3"
+101 http GET https://registry.npmjs.org/mkdirp/0.3.5
+102 http 304 https://registry.npmjs.org/mkdirp/0.3.5
+103 silly registry.get cb [ 304,
+103 silly registry.get   { date: 'Thu, 10 Apr 2014 18:33:06 GMT',
+103 silly registry.get     server: 'Apache',
+103 silly registry.get     via: '1.1 varnish',
+103 silly registry.get     'last-modified': 'Thu, 10 Apr 2014 18:33:02 GMT',
+103 silly registry.get     'cache-control': 'max-age=1',
+103 silly registry.get     etag: '"ARQBLID1NJGBQ0K57C3QRAEQ3"',
+103 silly registry.get     'x-served-by': 'cache-jfk1025-JFK',
+103 silly registry.get     'x-cache': 'HIT',
+103 silly registry.get     'x-cache-hits': '2',
+103 silly registry.get     'x-timer': 'S1397154786.248170376,VS0,VE0',
+103 silly registry.get     vary: 'Accept',
+103 silly registry.get     'content-length': '0',
+103 silly registry.get     'keep-alive': 'timeout=10, max=50',
+103 silly registry.get     connection: 'Keep-Alive' } ]
+104 verbose etag mkdirp/0.3.5 from cache
+105 silly lockFile 67d2df2a-mkdirp-0-3-5 mkdirp@0.3.5
+106 silly lockFile 67d2df2a-mkdirp-0-3-5 mkdirp@0.3.5
+107 http 304 https://registry.npmjs.org/commander/1.3.2
+108 silly registry.get cb [ 304,
+108 silly registry.get   { date: 'Thu, 10 Apr 2014 18:33:06 GMT',
+108 silly registry.get     server: 'Apache',
+108 silly registry.get     via: '1.1 varnish',
+108 silly registry.get     'last-modified': 'Thu, 10 Apr 2014 18:33:06 GMT',
+108 silly registry.get     'cache-control': 'max-age=1',
+108 silly registry.get     etag: '"5DYRWQDHS41K7IT7NFJDM1UK8"',
+108 silly registry.get     'x-served-by': 'cache-jfk1020-JFK',
+108 silly registry.get     'x-cache': 'HIT',
+108 silly registry.get     'x-cache-hits': '1',
+108 silly registry.get     'x-timer': 'S1397154786.239173412,VS0,VE315',
+108 silly registry.get     vary: 'Accept',
+108 silly registry.get     'content-length': '0',
+108 silly registry.get     'keep-alive': 'timeout=10, max=50',
+108 silly registry.get     connection: 'Keep-Alive' } ]
+109 verbose etag commander/1.3.2 from cache
+110 silly lockFile 2016e061-commander-1-3-2 commander@1.3.2
+111 silly lockFile 2016e061-commander-1-3-2 commander@1.3.2
+112 silly resolved [ { name: 'mkdirp',
+112 silly resolved     description: 'Recursively mkdir, like `mkdir -p`',
+112 silly resolved     version: '0.3.5',
+112 silly resolved     author:
+112 silly resolved      { name: 'James Halliday',
+112 silly resolved        email: 'mail@substack.net',
+112 silly resolved        url: 'http://substack.net' },
+112 silly resolved     main: './index',
+112 silly resolved     keywords: [ 'mkdir', 'directory' ],
+112 silly resolved     repository:
+112 silly resolved      { type: 'git',
+112 silly resolved        url: 'http://github.com/substack/node-mkdirp.git' },
+112 silly resolved     scripts: { test: 'tap test/*.js' },
+112 silly resolved     devDependencies: { tap: '~0.4.0' },
+112 silly resolved     license: 'MIT',
+112 silly resolved     readme: '# mkdirp\n\nLike `mkdir -p`, but in node.js!\n\n[![build status](https://secure.travis-ci.org/substack/node-mkdirp.png)](http://travis-ci.org/substack/node-mkdirp)\n\n# example\n\n## pow.js\n\n```js\nvar mkdirp = require(\'mkdirp\');\n    \nmkdirp(\'/tmp/foo/bar/baz\', function (err) {\n    if (err) console.error(err)\n    else console.log(\'pow!\')\n});\n```\n\nOutput\n\n```\npow!\n```\n\nAnd now /tmp/foo/bar/baz exists, huzzah!\n\n# methods\n\n```js\nvar mkdirp = require(\'mkdirp\');\n```\n\n## mkdirp(dir, mode, cb)\n\nCreate a new directory and any necessary subdirectories at `dir` with octal\npermission string `mode`.\n\nIf `mode` isn\'t specified, it defaults to `0777 & (~process.umask())`.\n\n`cb(err, made)` fires with the error or the first directory `made`\nthat had to be created, if any.\n\n## mkdirp.sync(dir, mode)\n\nSynchronously create a new directory and any necessary subdirectories at `dir`\nwith octal permission string `mode`.\n\nIf `mode` isn\'t specified, it defaults to `0777 & (~process.umask())`.\n\nReturns the first directory that had to be created, if any.\n\n# install\n\nWith [npm](http://npmjs.org) do:\n\n```\nnpm install mkdirp\n```\n\n# license\n\nMIT\n',
+112 silly resolved     readmeFilename: 'readme.markdown',
+112 silly resolved     bugs: { url: 'https://github.com/substack/node-mkdirp/issues' },
+112 silly resolved     homepage: 'https://github.com/substack/node-mkdirp',
+112 silly resolved     _id: 'mkdirp@0.3.5',
+112 silly resolved     _from: 'mkdirp@0.3.5' },
+112 silly resolved   { name: 'commander',
+112 silly resolved     version: '1.3.2',
+112 silly resolved     description: 'the complete solution for node.js command-line programs',
+112 silly resolved     keywords: [ 'command', 'option', 'parser', 'prompt', 'stdin' ],
+112 silly resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+112 silly resolved     repository:
+112 silly resolved      { type: 'git',
+112 silly resolved        url: 'https://github.com/visionmedia/commander.js.git' },
+112 silly resolved     dependencies: { keypress: '0.1.x' },
+112 silly resolved     devDependencies: { should: '>= 0.0.1' },
+112 silly resolved     scripts: { test: 'make test' },
+112 silly resolved     main: 'index',
+112 silly resolved     engines: { node: '>= 0.6.x' },
+112 silly resolved     readme: '# Commander.js\n\n  The complete solution for [node.js](http://nodejs.org) command-line interfaces, inspired by Ruby\'s [commander](https://github.com/visionmedia/commander).\n\n [![Build Status](https://secure.travis-ci.org/visionmedia/commander.js.png)](http://travis-ci.org/visionmedia/commander.js)\n\n## Installation\n\n    $ npm install commander\n\n## Option parsing\n\n Options with commander are defined with the `.option()` method, also serving as documentation for the options. The example below parses args and options from `process.argv`, leaving remaining args as the `program.args` array which were not consumed by options.\n\n```js\n#!/usr/bin/env node\n\n/**\n * Module dependencies.\n */\n\nvar program = require(\'commander\');\n\nprogram\n  .version(\'0.0.1\')\n  .option(\'-p, --peppers\', \'Add peppers\')\n  .option(\'-P, --pineapple\', \'Add pineapple\')\n  .option(\'-b, --bbq\', \'Add bbq sauce\')\n  .option(\'-c, --cheese [type]\', \'Add the specified type of cheese [marble]\', \'marble\')\n  .parse(process.argv);\n\nconsole.log(\'you ordered a pizza with:\');\nif (program.peppers) console.log(\'  - peppers\');\nif (program.pineapple) console.log(\'  - pineapple\');\nif (program.bbq) console.log(\'  - bbq\');\nconsole.log(\'  - %s cheese\', program.cheese);\n```\n\n Short flags may be passed as a single arg, for example `-abc` is equivalent to `-a -b -c`. Multi-word options such as "--template-engine" are camel-cased, becoming `program.templateEngine` etc.\n\n## Automated --help\n\n The help information is auto-generated based on the information commander already knows about your program, so the following `--help` info is for free:\n\n```  \n $ ./examples/pizza --help\n\n   Usage: pizza [options]\n\n   Options:\n\n     -V, --version        output the version number\n     -p, --peppers        Add peppers\n     -P, --pineapple      Add pineapple\n     -b, --bbq            Add bbq sauce\n     -c, --cheese <type>  Add the specified type of cheese [marble]\n     -h, --help           output usage information\n\n```\n\n## Coercion\n\n```js\nfunction range(val) {\n  return val.split(\'..\').map(Number);\n}\n\nfunction list(val) {\n  return val.split(\',\');\n}\n\nprogram\n  .version(\'0.0.1\')\n  .usage(\'[options] <file ...>\')\n  .option(\'-i, --integer <n>\', \'An integer argument\', parseInt)\n  .option(\'-f, --float <n>\', \'A float argument\', parseFloat)\n  .option(\'-r, --range <a>..<b>\', \'A range\', range)\n  .option(\'-l, --list <items>\', \'A list\', list)\n  .option(\'-o, --optional [value]\', \'An optional value\')\n  .parse(process.argv);\n\nconsole.log(\' int: %j\', program.integer);\nconsole.log(\' float: %j\', program.float);\nconsole.log(\' optional: %j\', program.optional);\nprogram.range = program.range || [];\nconsole.log(\' range: %j..%j\', program.range[0], program.range[1]);\nconsole.log(\' list: %j\', program.list);\nconsole.log(\' args: %j\', program.args);\n```\n\n## Custom help\n\n You can display arbitrary `-h, --help` information\n by listening for "--help". Commander will automatically\n exit once you are done so that the remainder of your program\n does not execute causing undesired behaviours, for example\n in the following executable "stuff" will not output when\n `--help` is used.\n\n```js\n#!/usr/bin/env node\n\n/**\n * Module dependencies.\n */\n\nvar program = require(\'../\');\n\nfunction list(val) {\n  return val.split(\',\').map(Number);\n}\n\nprogram\n  .version(\'0.0.1\')\n  .option(\'-f, --foo\', \'enable some foo\')\n  .option(\'-b, --bar\', \'enable some bar\')\n  .option(\'-B, --baz\', \'enable some baz\');\n\n// must be before .parse() since\n// node\'s emit() is immediate\n\nprogram.on(\'--help\', function(){\n  console.log(\'  Examples:\');\n  console.log(\'\');\n  console.log(\'    $ custom-help --help\');\n  console.log(\'    $ custom-help -h\');\n  console.log(\'\');\n});\n\nprogram.parse(process.argv);\n\nconsole.log(\'stuff\');\n```\n\nyielding the following help output:\n\n```\n\nUsage: custom-help [options]\n\nOptions:\n\n  -h, --help     output usage information\n  -V, --version  output the version number\n  -f, --foo      enable some foo\n  -b, --bar      enable some bar\n  -B, --baz      enable some baz\n\nExamples:\n\n  $ custom-help --help\n  $ custom-help -h\n\n```\n\n## .prompt(msg, fn)\n\n Single-line prompt:\n\n```js\nprogram.prompt(\'name: \', function(name){\n  console.log(\'hi %s\', name);\n});\n```\n\n Multi-line prompt:\n\n```js\nprogram.prompt(\'description:\', function(name){\n  console.log(\'hi %s\', name);\n});\n```\n\n Coercion:\n\n```js\nprogram.prompt(\'Age: \', Number, function(age){\n  console.log(\'age: %j\', age);\n});\n```\n\n```js\nprogram.prompt(\'Birthdate: \', Date, function(date){\n  console.log(\'date: %s\', date);\n});\n```\n\n```js\nprogram.prompt(\'Email: \', /^.+@.+\\..+$/, function(email){\n  console.log(\'email: %j\', email);\n});\n```\n\n## .password(msg[, mask], fn)\n\nPrompt for password without echoing:\n\n```js\nprogram.password(\'Password: \', function(pass){\n  console.log(\'got "%s"\', pass);\n  process.stdin.destroy();\n});\n```\n\nPrompt for password with mask char "*":\n\n```js\nprogram.password(\'Password: \', \'*\', function(pass){\n  console.log(\'got "%s"\', pass);\n  process.stdin.destroy();\n});\n```\n\n## .confirm(msg, fn)\n\n Confirm with the given `msg`:\n\n```js\nprogram.confirm(\'continue? \', function(ok){\n  console.log(\' got %j\', ok);\n});\n```\n\n## .choose(list, fn)\n\n Let the user choose from a `list`:\n\n```js\nvar list = [\'tobi\', \'loki\', \'jane\', \'manny\', \'luna\'];\n\nconsole.log(\'Choose the coolest pet:\');\nprogram.choose(list, function(i){\n  console.log(\'you chose %d "%s"\', i, list[i]);\n});\n```\n\n## .outputHelp()\n\n  Output help information without exiting.\n\n## .help()\n\n  Output help information and exit immediately.\n\n## Links\n\n - [API documentation](http://visionmedia.github.com/commander.js/)\n - [ascii tables](https://github.com/LearnBoost/cli-table)\n - [progress bars](https://github.com/visionmedia/node-progress)\n - [more progress bars](https://github.com/substack/node-multimeter)\n - [examples](https://github.com/visionmedia/commander.js/tree/master/examples)\n\n## License \n\n(The MIT License)\n\nCopyright (c) 2011 TJ Holowaychuk &lt;tj@vision-media.ca&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\'Software\'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+112 silly resolved     readmeFilename: 'Readme.md',
+112 silly resolved     bugs: { url: 'https://github.com/visionmedia/commander.js/issues' },
+112 silly resolved     homepage: 'https://github.com/visionmedia/commander.js',
+112 silly resolved     _id: 'commander@1.3.2',
+112 silly resolved     _from: 'commander@1.3.2' } ]
+113 info install mkdirp@0.3.5 into /usr/local/lib/node_modules/express-generator
+114 info install commander@1.3.2 into /usr/local/lib/node_modules/express-generator
+115 info installOne mkdirp@0.3.5
+116 info installOne commander@1.3.2
+117 info /usr/local/lib/node_modules/express-generator/node_modules/mkdirp unbuild
+118 info /usr/local/lib/node_modules/express-generator/node_modules/commander unbuild
+119 verbose tar unpack /Users/shawnbroukhim/.npm/mkdirp/0.3.5/package.tgz
+120 silly lockFile 0bdec806-ss-generator-node-modules-mkdirp tar:///usr/local/lib/node_modules/express-generator/node_modules/mkdirp
+121 verbose lock tar:///usr/local/lib/node_modules/express-generator/node_modules/mkdirp /Users/shawnbroukhim/.npm/0bdec806-ss-generator-node-modules-mkdirp.lock
+122 silly lockFile 6cf2e2d2-him-npm-mkdirp-0-3-5-package-tgz tar:///Users/shawnbroukhim/.npm/mkdirp/0.3.5/package.tgz
+123 verbose lock tar:///Users/shawnbroukhim/.npm/mkdirp/0.3.5/package.tgz /Users/shawnbroukhim/.npm/6cf2e2d2-him-npm-mkdirp-0-3-5-package-tgz.lock
+124 verbose tar unpack /Users/shawnbroukhim/.npm/commander/1.3.2/package.tgz
+125 silly lockFile 4e8cd737-generator-node-modules-commander tar:///usr/local/lib/node_modules/express-generator/node_modules/commander
+126 verbose lock tar:///usr/local/lib/node_modules/express-generator/node_modules/commander /Users/shawnbroukhim/.npm/4e8cd737-generator-node-modules-commander.lock
+127 silly lockFile 4fddcd2e--npm-commander-1-3-2-package-tgz tar:///Users/shawnbroukhim/.npm/commander/1.3.2/package.tgz
+128 verbose lock tar:///Users/shawnbroukhim/.npm/commander/1.3.2/package.tgz /Users/shawnbroukhim/.npm/4fddcd2e--npm-commander-1-3-2-package-tgz.lock
+129 silly gunzTarPerm modes [ '755', '644' ]
+130 silly gunzTarPerm modes [ '755', '644' ]
+131 silly gunzTarPerm extractEntry package.json
+132 silly gunzTarPerm extractEntry package.json
+133 silly gunzTarPerm extractEntry .npmignore
+134 silly gunzTarPerm extractEntry LICENSE
+135 silly gunzTarPerm extractEntry index.js
+136 silly gunzTarPerm extractEntry History.md
+137 silly gunzTarPerm extractEntry Readme.md
+138 silly gunzTarPerm extractEntry index.js
+139 silly gunzTarPerm extractEntry .travis.yml
+140 silly gunzTarPerm extractEntry examples/pow.js
+141 silly gunzTarPerm extractEntry readme.markdown
+142 silly gunzTarPerm extractEntry test/chmod.js
+143 silly gunzTarPerm extractEntry test/perm.js
+144 silly gunzTarPerm extractEntry test/perm_sync.js
+145 silly gunzTarPerm extractEntry test/race.js
+146 silly gunzTarPerm extractEntry test/mkdirp.js
+147 silly gunzTarPerm extractEntry test/return.js
+148 silly gunzTarPerm extractEntry test/return_sync.js
+149 silly gunzTarPerm extractEntry test/root.js
+150 silly gunzTarPerm extractEntry test/sync.js
+151 silly gunzTarPerm extractEntry test/umask.js
+152 silly gunzTarPerm extractEntry test/clobber.js
+153 silly gunzTarPerm extractEntry test/umask_sync.js
+154 silly gunzTarPerm extractEntry test/rel.js
+155 silly lockFile 4e8cd737-generator-node-modules-commander tar:///usr/local/lib/node_modules/express-generator/node_modules/commander
+156 silly lockFile 4e8cd737-generator-node-modules-commander tar:///usr/local/lib/node_modules/express-generator/node_modules/commander
+157 silly lockFile 4fddcd2e--npm-commander-1-3-2-package-tgz tar:///Users/shawnbroukhim/.npm/commander/1.3.2/package.tgz
+158 silly lockFile 4fddcd2e--npm-commander-1-3-2-package-tgz tar:///Users/shawnbroukhim/.npm/commander/1.3.2/package.tgz
+159 info preinstall commander@1.3.2
+160 verbose readDependencies using package.json deps
+161 verbose readDependencies using package.json deps
+162 verbose cache add [ 'keypress@0.1.x', null ]
+163 verbose cache add name=undefined spec="keypress@0.1.x" args=["keypress@0.1.x",null]
+164 verbose parsed url { protocol: null,
+164 verbose parsed url   slashes: null,
+164 verbose parsed url   auth: null,
+164 verbose parsed url   host: null,
+164 verbose parsed url   port: null,
+164 verbose parsed url   hostname: null,
+164 verbose parsed url   hash: null,
+164 verbose parsed url   search: null,
+164 verbose parsed url   query: null,
+164 verbose parsed url   pathname: 'keypress@0.1.x',
+164 verbose parsed url   path: 'keypress@0.1.x',
+164 verbose parsed url   href: 'keypress@0.1.x' }
+165 verbose cache add name="keypress" spec="0.1.x" args=["keypress","0.1.x"]
+166 verbose parsed url { protocol: null,
+166 verbose parsed url   slashes: null,
+166 verbose parsed url   auth: null,
+166 verbose parsed url   host: null,
+166 verbose parsed url   port: null,
+166 verbose parsed url   hostname: null,
+166 verbose parsed url   hash: null,
+166 verbose parsed url   search: null,
+166 verbose parsed url   query: null,
+166 verbose parsed url   pathname: '0.1.x',
+166 verbose parsed url   path: '0.1.x',
+166 verbose parsed url   href: '0.1.x' }
+167 verbose addNamed [ 'keypress', '0.1.x' ]
+168 verbose addNamed [ null, '>=0.1.0-0 <0.2.0-0' ]
+169 silly lockFile a3a73622-keypress-0-1-x keypress@0.1.x
+170 verbose lock keypress@0.1.x /Users/shawnbroukhim/.npm/a3a73622-keypress-0-1-x.lock
+171 silly addNameRange { name: 'keypress', range: '>=0.1.0-0 <0.2.0-0', hasData: false }
+172 verbose url raw keypress
+173 verbose url resolving [ 'https://registry.npmjs.org/', './keypress' ]
+174 verbose url resolved https://registry.npmjs.org/keypress
+175 info trying registry request attempt 1 at 14:33:07
+176 verbose etag "6P8OL7MNJBA9WSOO90HBIZS5Q"
+177 http GET https://registry.npmjs.org/keypress
+178 silly lockFile 0bdec806-ss-generator-node-modules-mkdirp tar:///usr/local/lib/node_modules/express-generator/node_modules/mkdirp
+179 silly lockFile 0bdec806-ss-generator-node-modules-mkdirp tar:///usr/local/lib/node_modules/express-generator/node_modules/mkdirp
+180 silly lockFile 6cf2e2d2-him-npm-mkdirp-0-3-5-package-tgz tar:///Users/shawnbroukhim/.npm/mkdirp/0.3.5/package.tgz
+181 silly lockFile 6cf2e2d2-him-npm-mkdirp-0-3-5-package-tgz tar:///Users/shawnbroukhim/.npm/mkdirp/0.3.5/package.tgz
+182 info preinstall mkdirp@0.3.5
+183 verbose readDependencies using package.json deps
+184 verbose readDependencies using package.json deps
+185 silly resolved []
+186 verbose about to build /usr/local/lib/node_modules/express-generator/node_modules/mkdirp
+187 info build /usr/local/lib/node_modules/express-generator/node_modules/mkdirp
+188 verbose linkStuff [ true,
+188 verbose linkStuff   '/usr/local/lib/node_modules',
+188 verbose linkStuff   false,
+188 verbose linkStuff   '/usr/local/lib/node_modules/express-generator/node_modules' ]
+189 info linkStuff mkdirp@0.3.5
+190 verbose linkBins mkdirp@0.3.5
+191 verbose linkMans mkdirp@0.3.5
+192 verbose rebuildBundles mkdirp@0.3.5
+193 info install mkdirp@0.3.5
+194 info postinstall mkdirp@0.3.5
+195 http 304 https://registry.npmjs.org/keypress
+196 silly registry.get cb [ 304,
+196 silly registry.get   { date: 'Thu, 10 Apr 2014 18:33:06 GMT',
+196 silly registry.get     server: 'Apache',
+196 silly registry.get     via: '1.1 varnish',
+196 silly registry.get     'last-modified': 'Thu, 10 Apr 2014 18:31:44 GMT',
+196 silly registry.get     'cache-control': 'max-age=1',
+196 silly registry.get     etag: '"6P8OL7MNJBA9WSOO90HBIZS5Q"',
+196 silly registry.get     'x-served-by': 'cache-jfk1033-JFK',
+196 silly registry.get     'x-cache': 'HIT',
+196 silly registry.get     'x-cache-hits': '7',
+196 silly registry.get     'x-timer': 'S1397154786.737382650,VS0,VE0',
+196 silly registry.get     vary: 'Accept',
+196 silly registry.get     'content-length': '0',
+196 silly registry.get     'keep-alive': 'timeout=10, max=50',
+196 silly registry.get     connection: 'Keep-Alive' } ]
+197 verbose etag keypress from cache
+198 silly addNameRange number 2 { name: 'keypress', range: '>=0.1.0-0 <0.2.0-0', hasData: true }
+199 silly addNameRange versions [ 'keypress', [ '0.0.1', '0.0.2', '0.1.0', '0.2.0', '0.2.1' ] ]
+200 verbose addNamed [ 'keypress', '0.1.0' ]
+201 verbose addNamed [ '0.1.0', '0.1.0' ]
+202 silly lockFile 22598b8c-keypress-0-1-0 keypress@0.1.0
+203 verbose lock keypress@0.1.0 /Users/shawnbroukhim/.npm/22598b8c-keypress-0-1-0.lock
+204 silly lockFile 22598b8c-keypress-0-1-0 keypress@0.1.0
+205 silly lockFile 22598b8c-keypress-0-1-0 keypress@0.1.0
+206 silly lockFile a3a73622-keypress-0-1-x keypress@0.1.x
+207 silly lockFile a3a73622-keypress-0-1-x keypress@0.1.x
+208 silly resolved [ { name: 'keypress',
+208 silly resolved     version: '0.1.0',
+208 silly resolved     description: 'Make any Node ReadableStream emit "keypress" events',
+208 silly resolved     author:
+208 silly resolved      { name: 'Nathan Rajlich',
+208 silly resolved        email: 'nathan@tootallnate.net',
+208 silly resolved        url: 'http://tootallnate.net' },
+208 silly resolved     main: 'index.js',
+208 silly resolved     scripts: { test: 'echo "Error: no test specified" && exit 1' },
+208 silly resolved     repository:
+208 silly resolved      { type: 'git',
+208 silly resolved        url: 'git://github.com/TooTallNate/keypress.git' },
+208 silly resolved     keywords: [ 'keypress', 'readline', 'core' ],
+208 silly resolved     license: 'MIT',
+208 silly resolved     readme: 'keypress\n========\n### Make any Node ReadableStream emit "keypress" events\n\n\nPrevious to Node `v0.8.x`, there was an undocumented `"keypress"` event that\n`process.stdin` would emit when it was a TTY. Some people discovered this hidden\ngem, and started using it in their own code.\n\nNow in Node `v0.8.x`, this `"keypress"` event does not get emitted by default,\nbut rather only when it is being used in conjuction with the `readline` (or by\nextension, the `repl`) module.\n\nThis module is the exact logic from the node `v0.8.x` releases ripped out into its\nown module.\n\n__Bonus:__ Now with mouse support!\n\nInstallation\n------------\n\nInstall with `npm`:\n\n``` bash\n$ npm install keypress\n```\n\nOr add it to the `"dependencies"` section of your _package.json_ file.\n\n\nExample\n-------\n\n#### Listening for "keypress" events\n\n``` js\nvar keypress = require(\'keypress\');\n\n// make `process.stdin` begin emitting "keypress" events\nkeypress(process.stdin);\n\n// listen for the "keypress" event\nprocess.stdin.on(\'keypress\', function (ch, key) {\n  console.log(\'got "keypress"\', key);\n  if (key && key.ctrl && key.name == \'c\') {\n    process.stdin.pause();\n  }\n});\n\nprocess.stdin.setRawMode(true);\nprocess.stdin.resume();\n```\n\n#### Listening for "mousepress" events\n\n``` js\nvar keypress = require(\'keypress\');\n\n// make `process.stdin` begin emitting "mousepress" (and "keypress") events\nkeypress(process.stdin);\n\n// you must enable the mouse events before they will begin firing\nkeypress.enableMouse(process.stdout);\n\nprocess.stdin.on(\'mousepress\', function (info) {\n  console.log(\'got "mousepress" event at %d x %d\', info.x, info.y);\n});\n\nprocess.on(\'exit\', function () {\n  // disable mouse on exit, so that the state\n  // is back to normal for the terminal\n  keypress.disableMouse(process.stdout);\n});\n```\n\n\nLicense\n-------\n\n(The MIT License)\n\nCopyright (c) 2012 Nathan Rajlich &lt;nathan@tootallnate.net&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\'Software\'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+208 silly resolved     readmeFilename: 'README.md',
+208 silly resolved     bugs: { url: 'https://github.com/TooTallNate/keypress/issues' },
+208 silly resolved     homepage: 'https://github.com/TooTallNate/keypress',
+208 silly resolved     _id: 'keypress@0.1.0',
+208 silly resolved     _from: 'keypress@0.1.x' } ]
+209 info install keypress@0.1.0 into /usr/local/lib/node_modules/express-generator/node_modules/commander
+210 info installOne keypress@0.1.0
+211 info /usr/local/lib/node_modules/express-generator/node_modules/commander/node_modules/keypress unbuild
+212 verbose tar unpack /Users/shawnbroukhim/.npm/keypress/0.1.0/package.tgz
+213 silly lockFile a7c9bd34--commander-node-modules-keypress tar:///usr/local/lib/node_modules/express-generator/node_modules/commander/node_modules/keypress
+214 verbose lock tar:///usr/local/lib/node_modules/express-generator/node_modules/commander/node_modules/keypress /Users/shawnbroukhim/.npm/a7c9bd34--commander-node-modules-keypress.lock
+215 silly lockFile 1dfa6469-m-npm-keypress-0-1-0-package-tgz tar:///Users/shawnbroukhim/.npm/keypress/0.1.0/package.tgz
+216 verbose lock tar:///Users/shawnbroukhim/.npm/keypress/0.1.0/package.tgz /Users/shawnbroukhim/.npm/1dfa6469-m-npm-keypress-0-1-0-package-tgz.lock
+217 silly gunzTarPerm modes [ '755', '644' ]
+218 silly gunzTarPerm extractEntry package.json
+219 silly gunzTarPerm extractEntry README.md
+220 silly gunzTarPerm extractEntry index.js
+221 silly gunzTarPerm extractEntry test.js
+222 silly lockFile a7c9bd34--commander-node-modules-keypress tar:///usr/local/lib/node_modules/express-generator/node_modules/commander/node_modules/keypress
+223 silly lockFile a7c9bd34--commander-node-modules-keypress tar:///usr/local/lib/node_modules/express-generator/node_modules/commander/node_modules/keypress
+224 silly lockFile 1dfa6469-m-npm-keypress-0-1-0-package-tgz tar:///Users/shawnbroukhim/.npm/keypress/0.1.0/package.tgz
+225 silly lockFile 1dfa6469-m-npm-keypress-0-1-0-package-tgz tar:///Users/shawnbroukhim/.npm/keypress/0.1.0/package.tgz
+226 info preinstall keypress@0.1.0
+227 verbose readDependencies using package.json deps
+228 verbose readDependencies using package.json deps
+229 silly resolved []
+230 verbose about to build /usr/local/lib/node_modules/express-generator/node_modules/commander/node_modules/keypress
+231 info build /usr/local/lib/node_modules/express-generator/node_modules/commander/node_modules/keypress
+232 verbose linkStuff [ true,
+232 verbose linkStuff   '/usr/local/lib/node_modules',
+232 verbose linkStuff   false,
+232 verbose linkStuff   '/usr/local/lib/node_modules/express-generator/node_modules/commander/node_modules' ]
+233 info linkStuff keypress@0.1.0
+234 verbose linkBins keypress@0.1.0
+235 verbose linkMans keypress@0.1.0
+236 verbose rebuildBundles keypress@0.1.0
+237 info install keypress@0.1.0
+238 info postinstall keypress@0.1.0
+239 verbose about to build /usr/local/lib/node_modules/express-generator/node_modules/commander
+240 info build /usr/local/lib/node_modules/express-generator/node_modules/commander
+241 verbose linkStuff [ true,
+241 verbose linkStuff   '/usr/local/lib/node_modules',
+241 verbose linkStuff   false,
+241 verbose linkStuff   '/usr/local/lib/node_modules/express-generator/node_modules' ]
+242 info linkStuff commander@1.3.2
+243 verbose linkBins commander@1.3.2
+244 verbose linkMans commander@1.3.2
+245 verbose rebuildBundles commander@1.3.2
+246 verbose rebuildBundles [ 'keypress' ]
+247 info install commander@1.3.2
+248 info postinstall commander@1.3.2
+249 verbose about to build /usr/local/lib/node_modules/express-generator
+250 info build /usr/local/lib/node_modules/express-generator
+251 verbose linkStuff [ true,
+251 verbose linkStuff   '/usr/local/lib/node_modules',
+251 verbose linkStuff   true,
+251 verbose linkStuff   '/usr/local/lib/node_modules' ]
+252 info linkStuff express-generator@4.0.0
+253 verbose linkBins express-generator@4.0.0
+254 verbose link bins [ { express: './bin/express' }, '/usr/local/bin', true ]
+255 verbose linkMans express-generator@4.0.0
+256 verbose rebuildBundles express-generator@4.0.0
+257 verbose rebuildBundles [ 'commander', 'mkdirp' ]
+258 info /usr/local/lib/node_modules/express-generator unbuild
+259 info preuninstall express-generator@4.0.0
+260 info uninstall express-generator@4.0.0
+261 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild express-generator@4.0.0
+262 verbose /usr/local/bin,[object Object] binRoot
+263 error error rolling back Error: Refusing to delete: /usr/local/bin/express not in /usr/local/lib/node_modules/express-generator
+263 error error rolling back     at clobberFail (/usr/local/Cellar/node/0.10.24/lib/node_modules/npm/lib/utils/gently-rm.js:41:12)
+263 error error rolling back     at next (/usr/local/Cellar/node/0.10.24/lib/node_modules/npm/lib/utils/gently-rm.js:27:14)
+263 error error rolling back     at /usr/local/Cellar/node/0.10.24/lib/node_modules/npm/lib/utils/gently-rm.js:36:12
+263 error error rolling back     at Object.oncomplete (fs.js:107:15)
+263 error error rolling back  express-generator@4.0.0 { [Error: Refusing to delete: /usr/local/bin/express not in /usr/local/lib/node_modules/express-generator] code: 'EEXIST', path: '/usr/local/bin/express' }
+264 error Refusing to delete: /usr/local/bin/express not in /usr/local/lib/node_modules/express-generator
+File exists: /usr/local/bin/express
+Move it away, and try again.
+265 error System Darwin 13.1.0
+266 error command "/usr/local/Cellar/node/0.10.24/bin/node" "/usr/local/bin/npm" "install" "-g" "express-generator"
+267 error cwd /Users/shawnbroukhim/dev/citizennet_fe_eng_challenge/frontend-engineering-challenge/citizennet_2
+268 error node -v v0.10.24
+269 error npm -v 1.3.21
+270 error path /usr/local/bin/express
+271 error code EEXIST
+272 verbose exit [ 1, true ]
