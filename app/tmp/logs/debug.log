@@ -1,0 +1,70 @@
+2014-04-13 01:12:57 Notice: Notice (8): Undefined index: description in [/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/rss/tasks_rss_results.ctp, line 34]
+Trace:
+include - APP/View/Themed/Travelfly/Tasks/rss/tasks_rss_results.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+TasksController::results() - APP/Controller/TasksController.php, line 107
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-04-13 01:12:57 Notice: Notice (8): Undefined index: link in [/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/rss/tasks_rss_results.ctp, line 14]
+Trace:
+include - APP/View/Themed/Travelfly/Tasks/rss/tasks_rss_results.ctp, line 14
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+TasksController::results() - APP/Controller/TasksController.php, line 107
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-04-13 01:12:57 Notice: Notice (8): Undefined index: description in [/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/rss/tasks_rss_results.ctp, line 20]
+Trace:
+include - APP/View/Themed/Travelfly/Tasks/rss/tasks_rss_results.ctp, line 20
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+TasksController::results() - APP/Controller/TasksController.php, line 107
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-04-13 01:12:57 Notice: Notice (8): Undefined index: link in [/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/rss/tasks_rss_results.ctp, line 14]
+Trace:
+include - APP/View/Themed/Travelfly/Tasks/rss/tasks_rss_results.ctp, line 14
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+TasksController::results() - APP/Controller/TasksController.php, line 107
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-04-13 01:12:57 Notice: Notice (8): Undefined index: link in [/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/rss/tasks_rss_results.ctp, line 14]
+Trace:
+include - APP/View/Themed/Travelfly/Tasks/rss/tasks_rss_results.ctp, line 14
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+TasksController::results() - APP/Controller/TasksController.php, line 107
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+

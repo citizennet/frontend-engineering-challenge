@@ -1,0 +1,29 @@
+.blog-img-logo {
+    width:213px;
+}
+
+#header {
+    background-color: #2e2f33;
+    top:0px;
+}
+
+#header .filter {
+    background-color:inherit !important;
+}
+
+.post-title a, .post-view-link {
+    color: #5e9cb8;
+    font-size:1em;
+}
+
+.post-view-link:hover {
+    background:#5e9cb8;
+}
+
+::selection, #content .content-bottom, #footer {
+    background-color: #444b5b;
+}
+
+#footer .rss-feed i {
+    color:#5e9cb8;
+}
