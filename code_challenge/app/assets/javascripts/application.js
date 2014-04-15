@@ -29,7 +29,8 @@ function appendPosts(posts) {
 function appendLikes(likes) {
   // adds likes to page
   for(var i = 0; i < likes.data.length; i++) {
-    $("<div id='like'>"+likes.data[i].name+': '+likes.data[i].category+"</div>").appendTo('#likes');
+    var name = likes.data[i].name
+    $("<div class='like'>"+name+': '+likes.data[i].category+"</div>").appendTo('#likes');
   }
 }
 
@@ -61,7 +62,7 @@ function getPosts() {
 
 
 function getLikes() {
-  $("<div id='likes'></div>").appendTo('#contents');
+  $("<div id='likes'><h5 id='recent-likes'>Likes: </h5></div>").appendTo('#contents');
   $.getJSON('/likes', function(response) {
     likes = response;
   }).done(function() {
