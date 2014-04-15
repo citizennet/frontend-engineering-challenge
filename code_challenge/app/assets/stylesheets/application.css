@@ -17,26 +17,25 @@
   display: inline-block;
   width: 333px;
   padding: 2em;
-/*  max-height:700px;*/
   overflow:auto;
 }
+
 #posts {
   border: 2px solid black;
-  height: 95%;
+  width: 400px;
   position: relative;
   height: 700px;
   overflow: scroll;
+  margin-top: 50px;
 }
 
 .post-hover {
-  border: 2px solid black;
+  border: 2px solid rgba(1, 1, 1, .1);
   position: absolute;
-  display: inline-block;
-  width: 75%;
-  height: 75%;
-  margin-left: 333px;
-  overflow: visible;
-  display: inline;
+  width: 50%;
+  height: 700px;
+  margin-left: 400px;
+  margin-top: 40px;
 }
 
 .article-info {
@@ -57,4 +56,14 @@ a {
 
 a:hover{
   text-decoration: none;
+}
+
+img {
+  width: 400px;
+  padding: 8em;
+}
+
+#recent-posts {
+  padding-left: 8px;
+  position: fixed;
 }

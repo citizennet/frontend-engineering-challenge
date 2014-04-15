@@ -31,6 +31,7 @@ gem 'redis-rails'
 
 gem 'httparty'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'nokogiri'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

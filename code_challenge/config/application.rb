@@ -8,6 +8,6 @@ Bundler.require(:default, Rails.env)
 
 module CodeChallenge
   class Application < Rails::Application
-    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
+    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 1440.minutes }
   end
 end

@@ -1,5 +1,5 @@
 CodeChallenge::Application.routes.draw do
   root 'posts#index'
-  get 'posts' => 'posts#api_call'
-  get 'likes' => 'search#api_call'
+  get 'posts' => 'posts#get_posts'
+  get 'likes' => 'likes#get_likes'
 end

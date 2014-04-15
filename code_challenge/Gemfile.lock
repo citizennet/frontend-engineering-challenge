@@ -190,6 +190,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy
+  nokogiri
   pry-rails
   rails (= 4.0.3)
   redis-rails
