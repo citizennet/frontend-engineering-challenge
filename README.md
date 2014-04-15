@@ -14,10 +14,16 @@ Here's what your web-based application must do:
 1. Write two separate programs that can be run nightly to pull the API information and cache the results to disk. Plan for more programs to be developed that will follow the same pattern, so code it modularity and in sound OOP design. Additionally, code for redundancy, the below API resources are on an commodore 64 with bad wiring, so you might experience 503 errors.
 1. Develop an interactive, user friendly web page to display the Post and Like data that was pulled and cached to disk. The direction is left to you, but it has to be creative and interactive. Additional external API usage only adds points
 
+## Pro Tips
+1. Keep the changesets as small as possible. Use a dependency manager.
+1. Make it easy for anyone to build your project.
+1. Consistent use of coding standards.
+1. In Colin Powell fashion, we are looking for strength, not lack of weakness. Show off.
+
 ## Programming Requirements and Limits:
 1. php 5.3+
 1. javascript
-1. jquery
+1. jquery and/or angularjs (angularjs a big plus)
 1. html
 1. css
 
