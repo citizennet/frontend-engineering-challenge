@@ -28,6 +28,7 @@ function appendPosts(posts) {
 
 function appendLikes(likes) {
   // adds likes to page
+  // what to do with the likes was the most unclear part of the assignment for me
   for(var i = 0; i < likes.data.length; i++) {
     var name = likes.data[i].name
     $("<div class='like'>"+name+': '+likes.data[i].category+"</div>").appendTo('#likes');
@@ -38,12 +39,14 @@ function loadListeners() {
   // loads hover event listener, adds iframe when article title gets hovered over
   $('h3').mouseenter(function(e) {
     $('.post-hover').remove();
-    var post = $(e.target).parent().parent().parent()
-    var postID = post[0].id.split('-')[1]
-    var message = posts.data[postID].message.split('http')[0]
-    var description = posts.data[postID].description
-    var picture = posts.data[postID].picture
+    var post = $(e.target).parent().parent().parent();
+    var postID = post[0].id.split('-')[1];
+    // var message = posts.data[postID].message.split('http')[0]
+    // var description = posts.data[postID].description
+    // var picture = posts.data[postID].picture
     link = posts.data[postID].link
+    // using iframe eventually seemed to be the most effective way to view article data
+    // however it doesn't work for every single post...
     $("<iframe src='"+link+"' class='post-hover'></iframe>+").fadeIn(1000).appendTo('#article-space');
   })
 }
