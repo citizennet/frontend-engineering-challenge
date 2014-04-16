@@ -25,18 +25,15 @@ function appendPosts(posts) {
     }
   }
 }
-
+// adds likes to page
 function appendLikes(likes) {
-  // adds likes to page
-  // what to do with the likes was the most ambiguous part of the assignment for me
   for(var i = 0; i < likes.data.length; i++) {
     var link = "<a href='http://google.com/#q="+likes.data[i].name.replace(" ", "+")+"'>"+likes.data[i].name+"</a>";
     $("<div class='like'>"+link+': '+likes.data[i].category+"</div>").appendTo('#likes');
   }
 }
-
+// loads hover event listener for posts
 function loadListeners() {
-  // loads hover event listener, adds iframe when article title gets hovered over
   $('h3').mouseenter(function(e) {
     $('.post-hover').remove();
     var post = $(e.target).parent().parent().parent();
