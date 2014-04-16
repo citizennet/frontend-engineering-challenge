@@ -1,0 +1,46 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/shawnbroukhim/dev/citizennet_fe_eng_challenge/code_challenge/code_challenge/app/controllers/posts_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        0,
+        0,
+        null,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/shawnbroukhim/dev/citizennet_fe_eng_challenge/code_challenge/code_challenge/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/shawnbroukhim/dev/citizennet_fe_eng_challenge/code_challenge/code_challenge/app/controllers/likes_controller.rb": [
+        1,
+        1,
+        2,
+        2,
+        0,
+        0,
+        null,
+        2,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1397664980
+  }
+}
