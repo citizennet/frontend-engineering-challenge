@@ -1,0 +1,623 @@
+2014-04-12 03:50:55 Error: [MissingControllerException] Controller class TasksController could not be found.
+Exception Attributes: array (
+  'class' => 'TasksController',
+  'plugin' => NULL,
+)
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-12 03:52:57 Error: [MissingActionException] Action TasksController::run() could not be found.
+Exception Attributes: array (
+  'controller' => 'TasksController',
+  'action' => 'run',
+)
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-12 03:53:06 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/citizenet/app/View/Tasks/run.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/citizenet/app/View/Tasks/run.ctp',
+)
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(954): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#4 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-12 05:08:05 Error: [SocketException] Connection refused
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/CakeSocket.php(272): CakeSocket->connect()
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(371): CakeSocket->write('GET / HTTP/1.1?...')
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(459): HttpSocket->request(Array)
+#3 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(32): HttpSocket->get(NULL)
+#4 [internal function]: TasksController->run('jack')
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#8 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-12 05:08:08 Error: [SocketException] Connection refused
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/CakeSocket.php(272): CakeSocket->connect()
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(371): CakeSocket->write('GET / HTTP/1.1?...')
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(459): HttpSocket->request(Array)
+#3 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(32): HttpSocket->get(NULL)
+#4 [internal function]: TasksController->run('jack')
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#8 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-12 05:08:09 Error: [SocketException] Connection refused
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/CakeSocket.php(272): CakeSocket->connect()
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(371): CakeSocket->write('GET / HTTP/1.1?...')
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(459): HttpSocket->request(Array)
+#3 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(32): HttpSocket->get(NULL)
+#4 [internal function]: TasksController->run('jack')
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#8 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-12 05:08:09 Error: [SocketException] Connection refused
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/CakeSocket.php(272): CakeSocket->connect()
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(371): CakeSocket->write('GET / HTTP/1.1?...')
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(459): HttpSocket->request(Array)
+#3 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(32): HttpSocket->get(NULL)
+#4 [internal function]: TasksController->run('jack')
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#8 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-12 05:08:10 Error: [SocketException] Connection refused
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/CakeSocket.php(272): CakeSocket->connect()
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(371): CakeSocket->write('GET / HTTP/1.1?...')
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(459): HttpSocket->request(Array)
+#3 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(32): HttpSocket->get(NULL)
+#4 [internal function]: TasksController->run('jack')
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#8 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-12 05:08:19 Error: [SocketException] Connection refused
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/CakeSocket.php(272): CakeSocket->connect()
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(371): CakeSocket->write('GET / HTTP/1.1?...')
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(459): HttpSocket->request(Array)
+#3 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(32): HttpSocket->get(NULL)
+#4 [internal function]: TasksController->run('jack')
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#8 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-12 05:08:20 Error: [SocketException] Connection refused
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/CakeSocket.php(272): CakeSocket->connect()
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(371): CakeSocket->write('GET / HTTP/1.1?...')
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(459): HttpSocket->request(Array)
+#3 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(32): HttpSocket->get(NULL)
+#4 [internal function]: TasksController->run('jack')
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#8 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-12 05:08:20 Error: [SocketException] Connection refused
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/CakeSocket.php(272): CakeSocket->connect()
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(371): CakeSocket->write('GET / HTTP/1.1?...')
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(459): HttpSocket->request(Array)
+#3 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(32): HttpSocket->get(NULL)
+#4 [internal function]: TasksController->run('jack')
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#8 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-12 05:08:20 Error: [SocketException] Connection refused
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/CakeSocket.php(272): CakeSocket->connect()
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(371): CakeSocket->write('GET / HTTP/1.1?...')
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Network/Http/HttpSocket.php(459): HttpSocket->request(Array)
+#3 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(32): HttpSocket->get(NULL)
+#4 [internal function]: TasksController->run('jack')
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#8 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-12 05:31:11 Error: Fatal Error (64): Access level to TasksController::beforeFilter() must be public (as in class Controller) in [/Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php, line 5]
+2014-04-12 05:31:11 Error: [FatalErrorException] Access level to TasksController::beforeFilter() must be public (as in class Controller)
+Request URL: /citizenet/tasks/run/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'Access level to...', '/Applications/M...', 5)
+#1 [internal function]: ErrorHandler::handleError(64, 'Access level to...', '/Applications/M...', 5, Array)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 64, 'Access level to...', '/Applications/M...', 5, Array)
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-12 05:36:28 Error: [MissingActionException] Action TasksController::_do() could not be found.
+Exception Attributes: array (
+  'controller' => 'TasksController',
+  'action' => '_do',
+)
+Request URL: /citizenet/tasks/_do/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-12 05:36:45 Error: [PrivateActionException] Private Action TasksController::_do() is not directly accessible.
+Exception Attributes: array (
+  'controller' => 'TasksController',
+  'action' => '_do',
+)
+Request URL: /citizenet/tasks/_do/jack
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-12 06:06:04 Error: [MissingActionException] Action TasksController::getPosts() could not be found.
+Exception Attributes: array (
+  'controller' => 'TasksController',
+  'action' => 'getPosts',
+)
+Request URL: /citizenet/tasks/getPosts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-12 06:28:53 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/citizenet/app/View/Tasks/get_posts.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/citizenet/app/View/Tasks/get_posts.ctp',
+)
+Request URL: /citizenet/tasks/getPosts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(954): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#4 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-12 07:12:53 Error: Fatal Error (1): Cannot use object of type stdClass as array in [/Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php, line 51]
+2014-04-12 07:12:53 Error: [FatalErrorException] Cannot use object of type stdClass as array
+Request URL: /citizenet/tasks/getPosts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Cannot use obje...', '/Applications/M...', 51)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', '/Applications/M...', 51, Array)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', '/Applications/M...', 51, Array)
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-12 07:13:25 Error: Fatal Error (4): syntax error, unexpected ';' in [/Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php, line 35]
+2014-04-12 07:13:25 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /citizenet/tasks/getPosts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 35)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 35, Array)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 35, Array)
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-12 07:13:27 Error: Fatal Error (4): syntax error, unexpected ';' in [/Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php, line 35]
+2014-04-12 07:13:27 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /citizenet/tasks/getPosts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 35)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 35, Array)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 35, Array)
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-12 07:27:55 Error: Fatal Error (4): syntax error, unexpected '*', expecting function (T_FUNCTION) in [/Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php, line 50]
+2014-04-12 07:27:55 Error: [FatalErrorException] syntax error, unexpected '*', expecting function (T_FUNCTION)
+Request URL: /citizenet/tasks/getPosts
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 50)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 50, Array)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 50, Array)
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-12 07:50:10 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/tasks_results.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/tasks_results.ctp',
+)
+Request URL: /citizenet/tasks/results
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(463): View->_getViewFileName('tasks_results')
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(954): View->render('tasks_results', NULL)
+#2 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(95): Controller->render('tasks_results')
+#3 [internal function]: TasksController->results()
+#4 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#7 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-04-12 22:25:31 Error: Fatal Error (1): Call to undefined function gmp_nextprime() in [/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/tasks_results.ctp, line 2]
+2014-04-12 22:25:31 Error: [FatalErrorException] Call to undefined function gmp_nextprime()
+Request URL: /citizenet/tasks/results
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Applications/M...', 2)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Applications/M...', 2, Array)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Applications/M...', 2, Array)
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-13 00:31:20 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/rss_tasks_results.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/rss_tasks_results.ctp',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(463): View->_getViewFileName('rss_tasks_resul...')
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(954): View->render('rss_tasks_resul...', NULL)
+#2 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(109): Controller->render('rss_tasks_resul...')
+#3 [internal function]: TasksController->results('rss')
+#4 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#7 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-04-13 00:31:32 Error: [MissingActionException] Action TasksController::results.rss() could not be found.
+Exception Attributes: array (
+  'controller' => 'TasksController',
+  'action' => 'results.rss',
+)
+Request URL: /citizenet/tasks/results.rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-13 00:33:48 Error: Fatal Error (1): Call to a member function isRss() on a non-object in [/Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php, line 108]
+2014-04-13 00:33:48 Error: [FatalErrorException] Call to a member function isRss() on a non-object
+Request URL: /citizenet/tasks/results.rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Applications/M...', 108)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Applications/M...', 108, Array)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Applications/M...', 108, Array)
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-13 00:34:45 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/rss/rss_tasks_results.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/rss/rss_tasks_results.ctp',
+)
+Request URL: /citizenet/tasks/results.rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(463): View->_getViewFileName('rss_tasks_resul...')
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(954): View->render('rss_tasks_resul...', NULL)
+#2 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(107): Controller->render('rss_tasks_resul...')
+#3 [internal function]: TasksController->results()
+#4 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#7 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-04-13 00:47:50 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 31089666 bytes) in [/Applications/MAMP/htdocs/citizenet/lib/Cake/Utility/Debugger.php, line 561]
+2014-04-13 00:47:50 Error: [FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 31089666 bytes)
+Request URL: /citizenet/tasks/results.rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Allowed memory ...', '/Applications/M...', 561)
+#1 [internal function]: ErrorHandler::handleError(1, 'Allowed memory ...', '/Applications/M...', 561, Array)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Allowed memory ...', '/Applications/M...', 561, Array)
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-13 01:40:06 Error: Fatal Error (4): syntax error, unexpected 'version' (T_STRING) in [/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Layouts/rss/default.ctp, line 1]
+2014-04-13 01:40:06 Error: [FatalErrorException] syntax error, unexpected 'version' (T_STRING)
+Request URL: /citizenet/tasks/results.rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 1)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 1, Array)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 1, Array)
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-13 01:42:47 Error: [CakeException] Method setContent does not exist
+Request URL: /citizenet/tasks/results.rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(107): CakeRequest->__call('setContent', Array)
+#1 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(107): CakeRequest->setContent('xml')
+#2 [internal function]: TasksController->results()
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#4 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#6 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2014-04-13 01:59:18 Error: [MissingActionException] Action TasksController::home() could not be found.
+Exception Attributes: array (
+  'controller' => 'TasksController',
+  'action' => 'home',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-13 01:59:32 Error: [MissingActionException] Action TasksController::home() could not be found.
+Exception Attributes: array (
+  'controller' => 'TasksController',
+  'action' => 'home',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-13 01:59:58 Error: [MissingActionException] Action TasksController::results/rss() could not be found.
+Exception Attributes: array (
+  'controller' => 'TasksController',
+  'action' => 'results/rss',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-13 02:00:26 Error: [MissingActionException] Action TasksController::rss_results() could not be found.
+Exception Attributes: array (
+  'controller' => 'TasksController',
+  'action' => 'rss_results',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-13 02:00:51 Error: [MissingActionException] Action TasksController::rss_results() could not be found.
+Exception Attributes: array (
+  'controller' => 'TasksController',
+  'action' => 'rss_results',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-13 02:01:03 Error: [MissingActionException] Action TasksController::results/rss() could not be found.
+Exception Attributes: array (
+  'controller' => 'TasksController',
+  'action' => 'results/rss',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#2 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-13 02:02:59 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/tasks_rss_results.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/tasks_rss_results.ctp',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(463): View->_getViewFileName('tasks_rss_resul...')
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(954): View->render('tasks_rss_resul...', NULL)
+#2 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(108): Controller->render('tasks_rss_resul...')
+#3 [internal function]: TasksController->results(Array)
+#4 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#7 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-04-13 02:03:40 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/tasks_rss_results.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/tasks_rss_results.ctp',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(463): View->_getViewFileName('tasks_rss_resul...')
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(954): View->render('tasks_rss_resul...', NULL)
+#2 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(108): Controller->render('tasks_rss_resul...')
+#3 [internal function]: TasksController->results(Array)
+#4 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#7 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-04-13 02:04:08 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/tasks_rss_results.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/tasks_rss_results.ctp',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(463): View->_getViewFileName('tasks_rss_resul...')
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(954): View->render('tasks_rss_resul...', NULL)
+#2 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(109): Controller->render('tasks_rss_resul...')
+#3 [internal function]: TasksController->results(Array)
+#4 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#7 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-04-13 02:04:09 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/tasks_rss_results.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/tasks_rss_results.ctp',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(463): View->_getViewFileName('tasks_rss_resul...')
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(954): View->render('tasks_rss_resul...', NULL)
+#2 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(109): Controller->render('tasks_rss_resul...')
+#3 [internal function]: TasksController->results(Array)
+#4 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#7 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-04-13 02:04:29 Error: [MissingLayoutException] Layout file "/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Layouts/rss/default.ctp.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Layouts/rss/default.ctp.ctp',
+)
+Request URL: /citizenet/tasks/results/rss
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(504): View->_getLayoutFileName('rss/default.ctp')
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(474): View->renderLayout('', 'rss/default.ctp')
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(954): View->render('rss/tasks_rss_r...', NULL)
+#3 /Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php(109): Controller->render('rss/tasks_rss_r...')
+#4 [internal function]: TasksController->results(Array)
+#5 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#7 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#8 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-04-13 02:56:19 Error: Fatal Error (4): syntax error, unexpected 'beforeFilter' (T_STRING), expecting variable (T_VARIABLE) in [/Applications/MAMP/htdocs/citizenet/app/Controller/AppController.php, line 38]
+2014-04-13 02:56:19 Error: [FatalErrorException] syntax error, unexpected 'beforeFilter' (T_STRING), expecting variable (T_VARIABLE)
+Request URL: /citizenet/tasks/results
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/M...', 38)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/M...', 38, Array)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/M...', 38, Array)
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-13 02:56:26 Error: [ConfigureException] No variable $config found in /Applications/MAMP/htdocs/citizenet/app/Config/facebook.php
+Request URL: /citizenet/tasks/results
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/Configure.php(298): PhpReader->read('facebook')
+#1 /Applications/MAMP/htdocs/citizenet/app/Plugin/Facebook/Lib/FacebookInfo.php(42): Configure::load('facebook')
+#2 /Applications/MAMP/htdocs/citizenet/app/Plugin/Facebook/Lib/FB.php(29): FacebookInfo::getConfig()
+#3 /Applications/MAMP/htdocs/citizenet/app/Plugin/Facebook/Lib/FB.php(21): FB->__initInstance()
+#4 /Applications/MAMP/htdocs/citizenet/app/Plugin/Facebook/Controller/Component/ConnectComponent.php(84): FB->__construct()
+#5 [internal function]: ConnectComponent->initialize(Object(TasksController))
+#6 /Applications/MAMP/htdocs/citizenet/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#7 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#8 /Applications/MAMP/htdocs/citizenet/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#9 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(182): Controller->startupProcess()
+#11 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#12 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-04-13 03:17:18 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/get_likes.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Applications/MAMP/htdocs/citizenet/app/View/Themed/Travelfly/Tasks/get_likes.ctp',
+)
+Request URL: /citizenet/tasks/getLikes
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/View/View.php(463): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/citizenet/lib/Cake/Controller/Controller.php(954): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(192): Controller->render()
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest), Object(CakeResponse))
+#4 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-04-13 03:21:16 Error: Fatal Error (1): Call to a member function api() on a non-object in [/Applications/MAMP/htdocs/citizenet/app/Controller/TasksController.php, line 83]
+2014-04-13 03:21:16 Error: [FatalErrorException] Call to a member function api() on a non-object
+Request URL: /citizenet/tasks/getLikes
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Applications/M...', 83)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Applications/M...', 83, Array)
+#2 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Applications/M...', 83, Array)
+#3 /Applications/MAMP/htdocs/citizenet/lib/Cake/Core/App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-04-13 03:42:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /citizenet/js/retina/retina-1.1.0.min.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-13 03:42:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /citizenet/js/retina/retina-1.1.0.min.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-13 03:43:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /citizenet/js/retina/retina-1.1.0.min.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-13 03:43:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /citizenet/js/retina/retina-1.1.0.min.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-13 03:43:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /citizenet/js/retina/retina-1.1.0.min.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-13 03:43:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /citizenet/js/retina/retina-1.1.0.min.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-13 03:47:05 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /citizenet/fonts/fontawesome-webfont.woff?v=4.0.3
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-13 03:47:05 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /citizenet/fonts/fontawesome-webfont.ttf?v=4.0.3
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-13 03:47:05 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /citizenet/fonts/fontawesome-webfont.svg?v=4.0.3
+Stack Trace:
+#0 /Applications/MAMP/htdocs/citizenet/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
