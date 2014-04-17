@@ -1,0 +1,66 @@
+a:link, a:visited {
+    color: #3B5998;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container::after, .stats:after {
+  clear: both;
+  display: block;
+  content: '';
+}
+
+.header {
+    background-color: #3B5998;
+    color: #fff;
+    padding: 5px 0 5px 10px;
+}
+
+.stats {
+    background-color: #eee;
+    margin-bottom: 20px;
+    padding: 5px 0 10px 10px;
+}
+
+.stat {
+    float: left;
+    width: 30%;
+}
+
+.likes {
+    list-style: none;
+}
+
+.post {
+    float: left;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 280px;
+    width: 350px;
+}
+
+.from {
+    font-weight: bold;
+}
+
+.category {
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 1.2em;
+    margin: 8px 0 8px 0;
+}
+
+.actions {
+    background-color: #eee;
+}
+
+.action {
+    float: left;
+    width: 175px;
+}
