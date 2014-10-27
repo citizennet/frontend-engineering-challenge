@@ -4,25 +4,25 @@ This is MEAN Stack app that can be run nightly. It pulls information from an API
 ## Configuration
 ### Client
 **Scripts**  
-JavaScript, Angular
+JavaScript, Angular  
 **Markup**  
-HTML
+HTML  
 **Stylesheets**  
-Sass
+Sass  
 **Angular Routes**  
 ngRoute  
 ### Server
 **Database**  
-MongoDB
+MongoDB  
 **Authentication**  
-Nope, Not this time around
+Nope, Not this time around  
 
 ## Intructions for local development
 Run `grunt` to run tasks and compile assets  
 Run `grunt server` to view environment on screen
 
 ## Nightly data record keeping
-Push the button every night
+Push the button every night. It's just that simple
 
 ### Built for strength, not lack of weakness&copy;
 
