@@ -73,13 +73,6 @@ module.exports = function (grunt) {
         files: ['server/**/*.spec.js'],
         tasks: ['env:test', 'mochaTest']
       },
-      jsTest: {
-        files: [
-          '<%= yeoman.client %>/{app,components}/**/*.spec.js',
-          '<%= yeoman.client %>/{app,components}/**/*.mock.js'
-        ],
-        tasks: ['newer:jshint:all', 'karma']
-      },
       injectSass: {
         files: [
           '<%= yeoman.client %>/{app,components}/**/*.{scss,sass}'],
@@ -425,34 +418,6 @@ module.exports = function (grunt) {
       ]
     },
 
-    // Test settings
-    karma: {
-      unit: {
-        configFile: 'karma.conf.js',
-        singleRun: true
-      }
-    },
-
-    mochaTest: {
-      options: {
-        reporter: 'spec'
-      },
-      src: ['server/**/*.spec.js']
-    },
-
-    protractor: {
-      options: {
-        configFile: 'protractor.conf.js'
-      },
-      chrome: {
-        options: {
-          args: {
-            browser: 'chrome'
-          }
-        }
-      }
-    },
-
     env: {
       test: {
         NODE_ENV: 'test'
@@ -614,30 +579,10 @@ module.exports = function (grunt) {
         'injector:sass', 
         'concurrent:test',
         'injector',
-        'autoprefixer',
-        'karma'
+        'autoprefixer'
       ]);
     }
 
-    else if (target === 'e2e') {
-      return grunt.task.run([
-        'clean:server',
-        'env:all',
-        'env:test',
-        'injector:sass', 
-        'concurrent:test',
-        'injector',
-        'wiredep',
-        'autoprefixer',
-        'express:dev',
-        'protractor'
-      ]);
-    }
-
-    else grunt.task.run([
-      'test:server',
-      'test:client'
-    ]);
   });
 
   grunt.registerTask('build', [

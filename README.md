@@ -1,5 +1,5 @@
 # Submission for Frontend Engineer
-This is MEAN Stack app that can be run nightly. It pulls information from an API and caches the information for later display.\
+This is MEAN Stack app that can be run nightly. It pulls information from an API and caches the information for later display.
 
 ## Configuration
 ### Client

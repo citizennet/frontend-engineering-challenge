@@ -1,3 +1,4 @@
+(function(angular){
 'use strict';
 
 angular.module('frontendEngineeringChallengeApp', [
@@ -8,9 +9,18 @@ angular.module('frontendEngineeringChallengeApp', [
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .otherwise({
-        redirectTo: '/'
-      });
+        .when('/admin', {
+          templateUrl: 'partials/admin.html',
+          controller: 'AdminCtrl'
+        }) 
+        .when('/dashboard', {
+          templateUrl: 'partials/dashboard.html',
+          controller: 'DashboardCtrl'
+        })
+        .otherwise({
+          redirectTo: '/admin'
+        });
 
     $locationProvider.html5Mode(true);
   });
+}(window.angular));
