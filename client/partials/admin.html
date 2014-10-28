@@ -1,2 +1,30 @@
-<h1>This is the Admin section that saves information nightly</h1>
-<p>{{hello}}</p>
+<div class="contain adminWrapper">
+	<h1>API Administration</h1>
+	<p>{{hello}}</p>
+	<section class="saveInfo">
+		<div class="lastSave">Last Save was on {{lastTimestamp}}</div>
+		<div class="save btn">Save Information</div>
+	</section>
+	
+	<section class="previousSaves">
+		<h3>Previous Saves</h3>
+		<hr>
+		<table>
+			<tbody>
+				<tr>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Success</th>
+					<th>id</th>
+				</tr>
+				<tr>
+					<th>Sample 01/04/2012</th>
+					<th>Sample 12:10pm</th>
+					<th>Sample Successful</th>
+					<th>Sample 1</th>
+				</tr>
+			</tbody>
+			
+		</table>
+	</section>
+</div>

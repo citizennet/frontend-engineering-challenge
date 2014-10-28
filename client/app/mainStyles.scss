@@ -1,0 +1,68 @@
+body {
+	font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, sans-serif;
+	color: #222;
+	line-height: 1.7;
+	letter-spacing: normal;
+	font-size: 100%;
+	background: #F6F7FA;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+
+header {
+	position: relative;
+	top: 0px;
+	width: 100%;
+	background: #201F21;
+	height: 80px;
+}
+
+.contain {
+	width: 80%;
+	margin: 0 auto;
+}
+
+nav {
+	
+
+	.logo {
+		padding-top: 1.25em;
+	}
+}
+
+.btn {
+	border-radius: 10px;
+	padding: 1em;
+	text-align: center;
+	border: 2px solid black;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+// Admin Styles
+.save {
+	width: 275px;
+	height: 1.4em;
+}
+
+
+.adminWrapper {
+	section {
+		margin-top: 40px;
+	}
+
+	table {
+
+		th {
+			min-width: 175px;
+			max-width: 275px;
+		}
+	}
+
+
+
+}
+
