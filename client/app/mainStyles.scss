@@ -44,9 +44,12 @@ nav {
 	border-radius: 10px;
 	padding: 1em;
 	text-align: center;
-	border: 2px solid black;
+	border-top: 2px solid #65D4D6;
+	border-bottom: 2px solid #0E7B7D;
 	cursor: pointer;
 	font-weight: 700;
+	background: $lightseagreen;
+	color: white;
 }
 
 // Admin Styles
@@ -55,8 +58,45 @@ nav {
 	height: 1.4em;
 }
 
+.dialog {
+	position: absolute;
+	z-index: -1;
+	top: -400px;
+	width: 100%;
+	height: 60px;
+	margin: 0 auto;
+	background: $lightseagreen;
+
+	line-height: 60px;
+	text-align: center;
+
+	transition: all .5s;
+}
+
+.status {
+	opacity: 1;
+	font-size: 1.3em;
+	color: white;
+
+	-webkit-animation-delay: .6s; /* Safari and Chrome */ /* Safari and Chrome */
+  	animation-delay: .6s;
+
+  	-webkit-animation-name: inProgress;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+   
+    
+    animation-name: inProgress;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
 
 .adminWrapper {
+	margin-top: 120px;
 	section {
 		margin-top: 40px;
 	}
