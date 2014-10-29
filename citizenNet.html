@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app ="citizenNet">
+<head>
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script type="text/javascript" src="JS/app.js"></script>
+</head>	
+
+<body ng-controller="citizenNetCtrl">
+	<h1 class="text-center page-header" style="background-color: grey; color:white">CITIZEN NET</h1>
+	<div class = "container">
+		<div ng-repeat = "post in postData" style="border-bottom: gray 2px">
+			
+				<h4>by {{post.from.name}}</h4>
+				<img src="{{post.icon}}" />
+				<div>
+					<p>{{post.message}}</p>
+					<div ng-if = "post.picture.length > 0"><img src="{{post.picture}}" width="400" height="300" style="vertical-align:baseline; border:1px solid black"/>
+					</div>	
+
+					<div>
+						<h4>{{post.name}}</h4>
+						<p>{{post.description}}</p>
+					</div>
+					
+				</div>
+
+				<div>
+					<h4 ng-if="post.comments.count > 0">COMMENTS</h4>
+					<div ng-repeat = "comment in post.comments.data">
+						<p>{{comment.message}}</p>
+					</div>	
+				<hr />
+								
+			</div>
+		</div>
+</div>
+
+
+</body>
+
+</html>
