@@ -7,7 +7,7 @@
   // 'save-complete' notifies that we have persisted the data to our own local storage
 
   angular.module('frontendEngineeringChallengeApp')
-    .controller('AdminCtrl', function ($scope, $rootScope, $timeout, APIService) {
+    .controller('AdminCtrl', function ($scope, $rootScope, $timeout, $interval, APIService) {
 
       // After a successful API call, we will replace our API objects
       var receivedPostsData = false;
@@ -33,17 +33,30 @@
           }, 2000);
       }
 
-      // Accesses the API by using an asynchronous Service GET request
+      var timer;
+      function stopTimer(){
+        $interval.cancel(timer);
+      }
+
+      // Accesses the API by using an asynchronous Service GET request, continues until all data is successful
       $scope.accessAPI = function(){
         $scope.status = 'Accessing API';
         $scope.$broadcast('accessing-api');
 
-        // Access the API through our service only if we don't have values
-        if (!receivedPostsData)
-          APIService.getPostsData();
-        
-        if (!receivedLikesData)
-          APIService.getLikesData();
+        timer = $interval(function(){
+          
+          // Access the API through our service only if we don't have values
+          if (!receivedPostsData)
+            APIService.getPostsData();
+          
+          if (!receivedLikesData)
+            APIService.getLikesData();
+
+          if (receivedPostsData && receivedLikesData)
+            stopTimer();
+
+        }, 3000);
+
       }
 
       /***** Listeners *****/
@@ -60,7 +73,7 @@
         if (receivedPostsData && receivedLikesData){
           console.log('Here is the object we are saving');
           console.log(APIObjects);
-          persistData(APIObjects);  
+          persistData(APIObjects);
         }
 
       });
