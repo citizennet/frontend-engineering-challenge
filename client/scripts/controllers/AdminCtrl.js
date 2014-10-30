@@ -24,11 +24,11 @@
 
           // When this is complete fire off the save-complete event
           $timeout(function(){
-            var record = constructRecordObj();
             // Persist record and push record onto our spreadsheet
+            var record = constructRecordObj();
             $scope.spreadsheet.push(record);
 
-            $scope.lastTimestamp = 'Mocked 10/28/2014 at 11:36pm';
+            $scope.lastTimestamp = record.time;
             $scope.$broadcast('save-complete');
           }, 2000);
       }
@@ -55,7 +55,7 @@
           if (receivedPostsData && receivedLikesData)
             stopTimer();
 
-        }, 3000);
+        }, 15000);
 
       }
 
@@ -81,12 +81,24 @@
 
       /***** Helper Functions *****/
 
+      // Generates a UUID ref: http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
+      function generateUUID(){
+        var d = new Date().getTime();
+        var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = (d + Math.random()*16)%16 | 0;
+            d = Math.floor(d/16);
+            return (c=='x' ? r : (r&0x7|0x8)).toString(16);
+        });
+        return uuid;
+      };
+
       // Constructs record object for our admin table display data
       function constructRecordObj(){
+        var now = new Date();
         // todo: mocked data
-        var lastDate = '10/28/2014';
-        var lastTime = '11:36pm';
-        var lastID = '89ysgdf';
+        var lastDate = now.toDateString();
+        var lastTime = now.toTimeString();
+        var lastID = generateUUID();
         return {
           date: lastDate,
           time: lastTime,
