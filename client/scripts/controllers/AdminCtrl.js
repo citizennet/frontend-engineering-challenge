@@ -7,7 +7,7 @@
   // 'save-complete' notifies that we have persisted the data to our own local storage
 
   angular.module('frontendEngineeringChallengeApp')
-    .controller('AdminCtrl', function ($scope, $rootScope, $timeout, $interval, APIService) {
+    .controller('AdminCtrl', function ($scope, $rootScope, $timeout, $interval, APIService, LocalService) {
 
       // After a successful API call, we will replace our API objects
       var receivedPostsData = false;
@@ -16,7 +16,8 @@
       var receivedLikesData = false;
       $scope.APIlikesData = undefined;
 
-      $scope.spreadsheet = [];
+      // Attempt to get past records
+      LocalService.getRecords();
 
       // Persist the data received from API to our own storage
       function persistData(data){
@@ -26,7 +27,11 @@
           $timeout(function(){
             // Persist record and push record onto our spreadsheet
             var record = constructRecordObj();
+            // Get it to show locally
             $scope.spreadsheet.push(record);
+
+            // Persist it to our Mongo Database
+            LocalService.postRecord(record);
 
             $scope.lastTimestamp = record.time;
             $scope.$broadcast('save-complete');
@@ -91,6 +96,13 @@
         }
 
       });
+
+      // When we receive our spreadsheet object
+      $rootScope.$on('spreadsheet-data', function(){
+        console.log('this is our spreadsheet object');
+        $scope.spreadsheet = LocalService.spreadsheet().records;
+        console.log($scope.spreadsheet);
+      })
 
 
       /***** Helper Functions *****/
