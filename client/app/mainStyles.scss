@@ -19,11 +19,19 @@ h3 {
 	font-size: 1.2em;
 }
 
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
 header {
 	position: relative;
 	top: 0px;
 	width: 100%;
-	background: #201F21;
+	background: $citizenDark;
 	height: 80px;
 }
 
@@ -50,6 +58,16 @@ nav {
 	font-weight: 700;
 	background: $lightseagreen;
 	color: white;
+
+	transition: all .3s;
+}
+
+.btn.disabled {
+	cursor: not-allowed;
+	color: $textDisabled;
+	background: $disabled;
+	border-top: 2px solid $disabled;
+	border-bottom: 2px solid $disabled;
 }
 
 // Admin Styles
@@ -109,6 +127,41 @@ nav {
 		}
 	}
 
+}
+
+.adminAction {
+	width: 40%;
+	height: 300px;
+}
+
+.adminResponse {
+	width: 60%;
+	height: 300px;
+
+	p {
+		display: inline-block;
+		margin-top: 1em;
+	}
+
+	// .postsConfirmation {
+	// 	display: inline-block;
+	// }
+
+	// .likesConfirmation {
+	// 	display: inline-block;
+	// }
+}
+
+.previousSaves {
+	.dashLink {
+		padding-left: 10px;
+		padding-right: 10px;
+		display: inline-block;
+		border: 1px solid $citizenDark;
+		color: initial;
+		text-decoration: none;
+		font-size: .6em;
+	}
 }
 
 // Dashboard Styles

@@ -1,7 +1,7 @@
 (function(angular){
 
   angular.module('frontendEngineeringChallengeApp')
-  .service('APIService', function($http, $q, $window, $rootScope){
+  .service('APIService', function($http, $q, $rootScope){
 
   	// todo: Access token hard coded, would want to replace with session based access token
   	//***** API Initializations *****//
@@ -32,6 +32,7 @@
   	}
 
   	function handleError(response) {
+  		// todo: Handle Errors
   		console.log('handling error')
 	    // // Response should be normalized. If not, we normalize it ourselves
 	    // if (!angular.isObject( response.data ) ||
@@ -43,9 +44,6 @@
 	    // return( $q.reject( response.data.message ) );
 	}
 
-
-	// I transform the successful response, unwrapping the application data
-	// from the API response payload.
 	function handleSuccess(response) {
 		console.log('success for ' + response.config.dataName);
 

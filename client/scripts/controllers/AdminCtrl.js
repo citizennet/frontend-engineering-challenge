@@ -9,9 +9,6 @@
   angular.module('frontendEngineeringChallengeApp')
     .controller('AdminCtrl', function ($scope, $rootScope, $timeout, APIService) {
 
-      $scope.hello = 'This is a hello dictated by the Admin controller';
-      $scope.lastTimestamp = 'Mocked 01/04/2012 at 11:36pm';
-
       // After a successful API call, we will replace our API objects
       var receivedPostsData = false;
       $scope.APIpostsData = undefined;
@@ -19,36 +16,34 @@
       var receivedLikesData = false;
       $scope.APIlikesData = undefined;
 
-      // Accesses the API by using an asynchronous Service GET request
-      function accessAPI(){
-          $scope.status = 'Accessing API';
-          $scope.$broadcast('accessing-api');
-
-          // Access the API through our service only if we don't have values
-          if (!receivedPostsData)
-            APIService.getPostsData();  
-          else 
-            console.log('no need for another API call, we have the posts data');
-          
-          if (!receivedLikesData)
-            APIService.getLikesData();
-          else
-            console.log('no need for another API call, we have the likes data');
-      }
+      $scope.spreadsheet = [];
 
       // Persist the data received from API to our own storage
       function persistData(data){
-          $scope.status = 'Saving Data';
+          $scope.status = 'Mocking Saving Data';
+
+          // When this is complete fire off the save-complete event
           $timeout(function(){
+            var record = constructRecordObj();
+            // Persist record and push record onto our spreadsheet
+            $scope.spreadsheet.push(record);
+
+            $scope.lastTimestamp = 'Mocked 10/28/2014 at 11:36pm';
             $scope.$broadcast('save-complete');
           }, 2000);
       }
 
+      // Accesses the API by using an asynchronous Service GET request
+      $scope.accessAPI = function(){
+        $scope.status = 'Accessing API';
+        $scope.$broadcast('accessing-api');
 
-      $scope.apiSave = function(){
-        console.log('Hitting API and initiating saving function');
-        // attempts to access the api
-        accessAPI(); 
+        // Access the API through our service only if we don't have values
+        if (!receivedPostsData)
+          APIService.getPostsData();
+        
+        if (!receivedLikesData)
+          APIService.getLikesData();
       }
 
       /***** Listeners *****/
@@ -57,16 +52,34 @@
         // Check our API Data objects and determine what we have received
         var APIObjects = APIService.APIObjects();
 
-        console.log('data-received event fired, here is the data we have->');
-        console.log(APIObjects);
-
         // Determine what data has been received
         if (APIObjects.posts !== undefined) { receivedPostsData = true; }
         if (APIObjects.likes !== undefined) { receivedLikesData = true; }
 
-        // Persist the data received
-        //persistData(data);
+        // If we successfully have all objects, persist the data received
+        if (receivedPostsData && receivedLikesData){
+          console.log('Here is the object we are saving');
+          console.log(APIObjects);
+          persistData(APIObjects);  
+        }
+
       });
+
+
+      /***** Helper Functions *****/
+
+      // Constructs record object for our admin table display data
+      function constructRecordObj(){
+        // todo: mocked data
+        var lastDate = '10/28/2014';
+        var lastTime = '11:36pm';
+        var lastID = '89ysgdf';
+        return {
+          date: lastDate,
+          time: lastTime,
+          id:   lastID
+        };
+      }
 
 
     })
@@ -83,6 +96,13 @@
             top: '-120px'
           });
           console.log('Save is complete and recognized, {from directive}');  
+        });
+      };
+    })
+    .directive('savebtn', function(){
+      return function(scope, elem) {
+        scope.$on('save-complete', function(){
+          elem.addClass('disabled');
         });
       };
     });

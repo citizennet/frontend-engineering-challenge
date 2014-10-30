@@ -2,29 +2,35 @@
 	<div class="status">{{status}}...</div>
 </div>
 <div class="contain adminWrapper">
-	<h1>API Administration</h1>
-	<p>{{hello}}</p>
-	<section class="saveInfo">
-		<div class="lastSave">Last Save was on {{lastTimestamp}}</div>
-		<div class="save btn" ng-click="apiSave()">Save Information</div>
-	</section>
+	<div class="left adminAction">
+		<h1>API Administration</h1>
+		<section class="saveInfo">
+			<div savebtn class="save btn" ng-click="accessAPI()">Save Information</div>
+			<div class="lastSave" ng-show="lastTimestamp">Last Save was on {{lastTimestamp}}</div>
+		</section>
+	</div>
+
+	<div class="right adminResponse">
+		<h3>Data Received</h3>
+		<!-- Use Sprite with background image to dicatate success sign -->
+		<p>Posts</p> <div postsConfirmation class="postsConfirmation"></div>
+		<p>Likes</p> <div likesConfirmation class="likesConfirmation"></div>
+	</div>
 	
 	<section class="previousSaves">
-		<h3>Previous Saves</h3>
+		<h3>Previous Saves <a href="/dashboard" class="dashLink">View Dashboard</a></h3>
 		<hr>
 		<table>
 			<tbody>
 				<tr>
 					<th>Date</th>
 					<th>Time</th>
-					<th>Success</th>
 					<th>id</th>
 				</tr>
-				<tr>
-					<th>Sample 01/04/2012</th>
-					<th>Sample 12:10pm</th>
-					<th>Sample Successful</th>
-					<th>Sample 1</th>
+				<tr ng-repeat="record in spreadsheet">
+					<th>{{record.date}}</th>
+					<th>{{record.time}}</th>
+					<th>{{record.id}}</th>
 				</tr>
 			</tbody>
 			
@@ -32,4 +38,4 @@
 	</section>
 
 	
-</div>
+</div><!-- End Admin Wrapper -->
