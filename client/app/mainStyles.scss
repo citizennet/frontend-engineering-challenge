@@ -121,9 +121,14 @@ nav {
 
 	table {
 
+		tr:nth-child(even){
+			background: #eee;
+		}
+
 		th {
+			padding-left: 10px;	
 			min-width: 175px;
-			max-width: 275px;
+			max-width: 405px;
 		}
 	}
 

@@ -33,29 +33,43 @@
           }, 2000);
       }
 
+      // The API process is started, and is continued on interval until success
       var timer;
       function stopTimer(){
         $interval.cancel(timer);
       }
 
-      // Accesses the API by using an asynchronous Service GET request, continues until all data is successful
-      $scope.accessAPI = function(){
-        $scope.status = 'Accessing API';
-        $scope.$broadcast('accessing-api');
+      function accessAPI() {
+        // Access the API through our service only if we don't have values
+        if (!receivedPostsData)
+          APIService.getPostsData();
+        
+        if (!receivedLikesData)
+          APIService.getLikesData();
+      }
+
+      function intervalAPI(){
 
         timer = $interval(function(){
-          
-          // Access the API through our service only if we don't have values
-          if (!receivedPostsData)
-            APIService.getPostsData();
-          
-          if (!receivedLikesData)
-            APIService.getLikesData();
+          $scope.status = 'Unsuccessful. Retrying Access of API every 15 seconds';
+          accessAPI();
 
           if (receivedPostsData && receivedLikesData)
             stopTimer();
 
         }, 15000);
+        
+      }
+
+      // Accesses the API by using an asynchronous Service GET request, continues until all data is successful
+      $scope.startAPI = function(){
+        $scope.status = 'Accessing API';
+        $scope.$broadcast('accessing-api');
+        accessAPI();
+
+        // todo: Do we want to call intervalAPI from startAPI?
+        // betterQuestion, do we want our interval to be initiated from the start?
+        intervalAPI();
 
       }
 
