@@ -24,6 +24,18 @@
 		$rootScope.$broadcast('spreadsheet-data');
 	}
 
+	function postData(url, dataObj){
+		var request = $http({
+	            method: "post",
+	            url: url,
+	            params: {
+	                action: "post"
+	            },
+	            
+	            data: dataObj
+	    });
+	}
+
   	// Expose Local Methods for our own Data Peristence
   	return {
   		spreadsheet: function spreadsheet(){
@@ -41,16 +53,23 @@
 
 	        return( request.then(handleSuccess, handleError) )
   		},
+
     	postRecord: function postRecord(recordObj){
-    		var request = $http({
-	            method: "post",
-	            url: '/record',
-	            params: {
-	                action: "post"
-	            },
-	            // attach the data name so we know which data object the response belongs to
-	            data: recordObj
-	        });
+	        var url = '/record';
+
+	        postData(url, recordObj);
+    	},
+    	// Post the incoming Post Data
+    	postPostData: function postPostData(postObj){
+    		var url = '/post';
+
+    		postData(url, postObj);	
+    	},
+    	// Post the incoming Like Data
+    	postLikeData: function postLikeData(likeObj){
+    		var url = '/like';
+
+    		postData(url, likeObj);	
     	}
     }
   });

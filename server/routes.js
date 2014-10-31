@@ -6,6 +6,8 @@
 
 var errors = require('./components/errors');
 var Record = require('./models/record.js');
+var Post = require('./models/post.js');
+var Like = require('./models/like.js');
 
 module.exports = function(app) {
   
@@ -35,7 +37,7 @@ module.exports = function(app) {
     var time = req.body.time;
     var datetime = req.body.date;
 
-    // Create Blazon object
+    // Create Record object
     var recordObj = new Record({
       id: id,
       time: time,
@@ -48,6 +50,47 @@ module.exports = function(app) {
     recordObj.save();
 
   });
+
+  app.post('/post', function(req, res){
+
+    var posts = req.body;
+
+    // Must iterate over posts because there is no bulk saving in Mongoose
+    posts.forEach(function(element, index, array){
+
+      // Create Post object with info we find relevant
+      var postObj = new Post({
+        id:   element.id,
+        icon: element.icon,
+        description: element.description
+      });
+
+      console.log(element);
+      console.log(element.date);
+      console.log(element.time);
+      // Save Post Object to DB
+      postObj.save();
+    });
+
+  });
+
+  app.post('/like', function(req, res){
+
+    var likes = req.body;
+
+    // Must iterate over likes because there is no bulk saving in Mongoose
+    likes.forEach(function(element, index, array){
+      // Create Like Object
+
+      console.log(element);
+
+      // var likeObj = new Like(element);
+      // likeObj.save();
+    });
+
+  });
+
+
 
   // All other routes should redirect to the index.html
   app.route('/*')

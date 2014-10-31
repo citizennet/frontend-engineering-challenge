@@ -11,16 +11,13 @@
 
       // After a successful API call, we will replace our API objects
       var receivedPostsData = false;
-      $scope.APIpostsData = undefined;
-
       var receivedLikesData = false;
-      $scope.APIlikesData = undefined;
 
-      // Attempt to get past records
+      // Attempt to get past records to display in our spreadsheet
       LocalService.getRecords();
 
       // Persist the data received from API to our own storage
-      function persistData(data){
+      function persistData(dataObj){
           $scope.status = 'Mocking Saving Data';
 
           // When this is complete fire off the save-complete event
@@ -30,8 +27,16 @@
             // Get it to show locally
             $scope.spreadsheet.push(record);
 
-            // Persist it to our Mongo Database
+            // Persist record to Mongo Database
             LocalService.postRecord(record);
+
+            console.log(dataObj.posts.data);
+            console.log(dataObj.likes.data);
+
+            // Persist Post and Like Data to Mongo Database
+            LocalService.postPostData(dataObj.posts.data);
+            LocalService.postLikeData(dataObj.likes.data);
+
 
             $scope.lastTimestamp = record.time;
             $scope.$broadcast('save-complete');
