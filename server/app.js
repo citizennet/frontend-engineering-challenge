@@ -19,7 +19,9 @@ require('./routes')(app);
 app.set('env', 'development');
 
 // Models
-var Record       = require('../server/models/record.js');
+var Record  = require('../server/models/record.js');
+var Post = require('../server/models/post.js');
+var Like  = require('../server/models/like.js');
 
 // Connect to database
 var options = {

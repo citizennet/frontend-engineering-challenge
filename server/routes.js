@@ -65,9 +65,6 @@ module.exports = function(app) {
         description: element.description
       });
 
-      console.log(element);
-      console.log(element.date);
-      console.log(element.time);
       // Save Post Object to DB
       postObj.save();
     });
@@ -80,12 +77,15 @@ module.exports = function(app) {
 
     // Must iterate over likes because there is no bulk saving in Mongoose
     likes.forEach(function(element, index, array){
+      
       // Create Like Object
-
-      console.log(element);
-
-      // var likeObj = new Like(element);
-      // likeObj.save();
+      var likeObj = new Like({
+        id: element.id,
+        name: element.name,
+        category: element.category
+      })
+      
+      likeObj.save();
     });
 
   });

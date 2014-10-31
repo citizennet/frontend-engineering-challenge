@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 
 var likeSchema = mongoose.Schema({
-  any: mongoose.Schema.Types.Mixed
+	id: String,
+	name: String,
+	category: String,
 });
 
 var Like = mongoose.model('Like', likeSchema);
