@@ -30,9 +30,6 @@
             // Persist record to Mongo Database
             LocalService.postRecord(record);
 
-            console.log(dataObj.posts.data);
-            console.log(dataObj.likes.data);
-
             // Persist Post and Like Data to Mongo Database
             LocalService.postPostData(dataObj.posts.data);
             LocalService.postLikeData(dataObj.likes.data);
@@ -45,12 +42,13 @@
 
       // The API process is started, and is continued on interval until success
       var timer;
-      function stopTimer(){
+      $scope.stopTimer = function(){
         $interval.cancel(timer);
+        $scope.$broadcast('timer-cancelled');
       }
 
       function accessAPI() {
-        // Access the API through our service only if we don't have values
+        // Access the API through our service only if we don't have values for Posts and Likes
         if (!receivedPostsData)
           APIService.getPostsData();
         
@@ -61,11 +59,12 @@
       function intervalAPI(){
 
         timer = $interval(function(){
+          $scope.$broadcast('retrying-api');
           $scope.status = 'Unsuccessful. Retrying Access of API every 15 seconds';
           accessAPI();
 
           if (receivedPostsData && receivedLikesData)
-            stopTimer();
+            $scope.stopTimer();
 
         }, 15000);
         
@@ -150,8 +149,13 @@
         scope.$on('save-complete', function(){
           elem.css({
             top: '-120px'
+          }); 
+        });
+
+        scope.$on('timer-cancelled', function(){
+          elem.css({
+            top: '-120px'
           });
-          console.log('Save is complete and recognized, {from directive}');  
         });
       };
     })
@@ -161,5 +165,17 @@
           elem.addClass('disabled');
         });
       };
-    });
+    })
+    .directive('cancel', function(){
+      return function(scope, elem) {
+        scope.$on('retrying-api', function(){
+          elem.addClass('showInline');
+        });
+
+
+        elem.on('click', function(){
+          scope.stopTimer();
+        })
+      };
+    });;
 }(window.angular));
