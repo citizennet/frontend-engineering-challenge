@@ -1,0 +1,207 @@
+body {
+	font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, sans-serif;
+	color: #222;
+	line-height: 1.7;
+	letter-spacing: normal;
+	font-size: 100%;
+	background: #F6F7FA;
+}
+
+h1 {
+	font-size: 2.2em;
+}
+
+h2 {
+	font-size: 1.6em;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.showInline {
+	display: inline-block;
+}
+
+header {
+	z-index: 1;
+	position: relative;
+	top: 0px;
+	width: 100%;
+	background: $citizenDark;
+	height: 80px;
+}
+
+.contain {
+	width: 80%;
+	margin: 0 auto;
+}
+
+nav {
+	
+
+	.logo {
+		padding-top: 1.25em;
+	}
+}
+
+.btn {
+	border-radius: 10px;
+	padding: 1em;
+	text-align: center;
+	border-top: 2px solid #65D4D6;
+	border-bottom: 2px solid #0E7B7D;
+	cursor: pointer;
+	font-weight: 700;
+	background: $lightseagreen;
+	color: white;
+
+	transition: all .3s;
+}
+
+.btn.disabled {
+	cursor: not-allowed;
+	color: $textDisabled;
+	background: $disabled;
+	border-top: 2px solid $disabled;
+	border-bottom: 2px solid $disabled;
+}
+
+// Admin Styles
+.save {
+	width: 255px;
+	height: 1.4em;
+}
+
+.dialog {
+	position: absolute;
+	top: -400px;
+	width: 100%;
+	height: 60px;
+	margin: 0 auto;
+	background: $lightseagreen;
+
+	line-height: 60px;
+	text-align: center;
+
+	transition: all .5s;
+}
+
+.status {
+	opacity: 1;
+	font-size: 1.3em;
+	color: white;
+
+	-webkit-animation-delay: .6s; /* Safari and Chrome */ /* Safari and Chrome */
+  	animation-delay: .6s;
+
+  	-webkit-animation-name: inProgress;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+   
+    
+    animation-name: inProgress;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.cancel {
+	margin-left: 15px;
+	display: none;
+	z-index: 55;
+	cursor: pointer;
+	background: none;
+	width: 160px;
+	height: 0px;
+	line-height: 0em;
+	border: 2px solid white;
+
+	&:hover {
+		border: 2px solid red;
+		color: red;
+	}
+}
+
+.cancel.showInline {
+	display: inline-block;
+}
+
+
+
+.adminWrapper {
+	margin-top: 120px;
+	section {
+		margin-top: 40px;
+	}
+
+	table {
+
+		tr:nth-child(even){
+			background: #eee;
+		}
+
+		th {
+			padding-left: 10px;	
+			min-width: 175px;
+			max-width: 405px;
+		}
+	}
+
+}
+
+.adminAction {
+	width: 40%;
+	height: 300px;
+}
+
+.adminResponse {
+	width: 60%;
+	height: 300px;
+
+	p {
+		display: inline-block;
+		margin-top: 1em;
+		width: 50px;
+	}
+
+	.postsConfirmation, .likesConfirmation {
+		width: 50px;
+		height: 50px;
+		margin-left: 10px;
+		display: inline-block;
+		background: url('../assets/images/statussprite.png');
+		background-repeat: none;
+		background-position: -55px 11px;
+	}
+
+	.postsConfirmation.received, .likesConfirmation.received {
+		background-position: 6px 9px;
+	}
+
+}
+
+.previousSaves {
+	.dashLink {
+		padding-left: 10px;
+		padding-right: 10px;
+		display: inline-block;
+		border: 1px solid $citizenDark;
+		color: initial;
+		text-decoration: none;
+		font-size: .6em;
+	}
+}
+
+// Dashboard Styles
+

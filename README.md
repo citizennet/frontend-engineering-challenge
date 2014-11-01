@@ -1,3 +1,36 @@
+# Submission for Frontend Engineer
+This is MEAN Stack app that can be run nightly. It pulls information from an API and caches the information for later display.
+
+## Pages
+Main pages are /admin and /dashboard  
+
+## Configuration
+### Client
+**Scripts**  
+JavaScript, Angular  
+**Markup**  
+HTML  
+**Stylesheets**  
+Sass  
+**Angular Routes**  
+ngRoute  
+### Server
+**Database**  
+MongoDB via MongoLab
+**Authentication**  
+Nope, Not this time around  
+
+## Intructions for local development
+Run `npm install` to install dependencies  
+Run `bower install` to install bower components  
+Run `grunt` to run tasks and compile assets  
+Run `grunt server` to view environment on screen
+
+## Nightly data record keeping
+Push the button every night. It's just that simple
+
+### Built for strength, not lack of weakness&copy;
+
 # Challenge for Frontend Engineer
 To better assess a candidates development skills, we would like to provide the following challenge.  You have as much time as you'd like (though we ask that you not spend more than a few hours).
 

@@ -1,0 +1,11 @@
+@-webkit-keyframes inProgress {  
+    0%   { opacity: 1.0; }
+    75%  { opacity: .2;  }
+    100% { opacity: 1.0; }
+}
+
+@keyframes inProgress {  
+    0%   { opacity: 1.0; }
+    75%  { opacity: .2;  }
+    100% { opacity: 1.0; }
+}
