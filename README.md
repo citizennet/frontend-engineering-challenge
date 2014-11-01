@@ -1,5 +1,8 @@
-a# Submission for Frontend Engineer
+# Submission for Frontend Engineer
 This is MEAN Stack app that can be run nightly. It pulls information from an API and caches the information for later display.
+
+## Pages
+Main pages are /admin and /dashboard
 
 ## Configuration
 ### Client

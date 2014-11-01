@@ -32,6 +32,30 @@ module.exports = function(app) {
 
   });
 
+  app.get('/posts', function(req, res){
+    
+    var posts = Post.find()
+    .exec(function(err, posts){
+      // create the json data for our API endpoint
+      res.json({
+        posts: posts
+      });
+    });
+
+  });
+
+  app.get('/likes', function(req, res){
+    
+    var likes = Like.find()
+    .exec(function(err, likes){
+      // create the json data for our API endpoint
+      res.json({
+        likes: likes
+      });
+    });
+
+  });
+
   app.post('/record', function(req, res){
     var id = req.body.id;
     var time = req.body.time;
