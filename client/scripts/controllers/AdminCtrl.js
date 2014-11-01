@@ -172,10 +172,27 @@
           elem.addClass('showInline');
         });
 
+        scope.$on('save-complete', function(){
+          elem.removeClass('showInline');
+        });
 
         elem.on('click', function(){
           scope.stopTimer();
         })
       };
-    });;
+    })
+    .directive('postsconfirmation', function($rootScope){
+      return function(scope, elem) {
+        $rootScope.$on('posts-data-received', function(){
+          elem.addClass('received');
+        })
+      };
+    })
+    .directive('likesconfirmation', function($rootScope){
+      return function(scope, elem) {
+        $rootScope.$on('likes-data-received', function(){
+          elem.addClass('received');
+        })
+      };
+    });
 }(window.angular));

@@ -1,4 +1,4 @@
-# Submission for Frontend Engineer
+a# Submission for Frontend Engineer
 This is MEAN Stack app that can be run nightly. It pulls information from an API and caches the information for later display.
 
 ## Configuration
@@ -18,6 +18,8 @@ MongoDB
 Nope, Not this time around  
 
 ## Intructions for local development
+Run `npm install` to install dependencies
+Run `bower install` to install bower components
 Run `grunt` to run tasks and compile assets  
 Run `grunt server` to view environment on screen
 
