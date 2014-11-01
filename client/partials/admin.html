@@ -1,0 +1,45 @@
+<div dialog class="dialog">
+	<div class="status-container">
+		<p><span class="status">{{status}}...</span><span cancel class="cancel btn">Cancel</span></p>
+		
+	</div>
+	
+</div>
+<div class="contain adminWrapper">
+	<div class="left adminAction">
+		<h1>API Administration</h1>
+		<section class="saveInfo">
+			<div savebtn class="save btn" ng-click="startAPI()">Save Information</div>
+			<div class="lastSave" ng-show="lastTimestamp">Last Save was on {{lastTimestamp}}</div>
+		</section>
+	</div>
+
+	<div class="right adminResponse">
+		<h3>Data Received</h3>
+		<!-- Use Sprite with background image to dicatate success sign -->
+		<p>Posts</p> <div postsConfirmation class="postsConfirmation"></div>
+		<p>Likes</p> <div likesConfirmation class="likesConfirmation"></div>
+	</div>
+	
+	<section class="previousSaves">
+		<h3>Previous Saves <a href="/dashboard" class="dashLink">View Dashboard</a></h3>
+		<hr>
+		<table>
+			<tbody>
+				<tr>
+					<th>Date</th>
+					<th>Time</th>
+					<th>ID</th>
+				</tr>
+				<tr ng-repeat="record in spreadsheet">
+					<th>{{record.date}}</th>
+					<th>{{record.time}}</th>
+					<th>{{record.id}}</th>
+				</tr>
+			</tbody>
+			
+		</table>
+	</section>
+
+	
+</div><!-- End Admin Wrapper -->
