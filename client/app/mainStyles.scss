@@ -27,7 +27,12 @@ h3 {
 	float: right;
 }
 
+.showInline {
+	display: inline-block;
+}
+
 header {
+	z-index: 1;
 	position: relative;
 	top: 0px;
 	width: 100%;
@@ -72,13 +77,12 @@ nav {
 
 // Admin Styles
 .save {
-	width: 275px;
+	width: 255px;
 	height: 1.4em;
 }
 
 .dialog {
 	position: absolute;
-	z-index: -1;
 	top: -400px;
 	width: 100%;
 	height: 60px;
@@ -112,6 +116,28 @@ nav {
     animation-iteration-count: infinite;
 }
 
+.cancel {
+	margin-left: 15px;
+	display: none;
+	z-index: 55;
+	cursor: pointer;
+	background: none;
+	width: 160px;
+	height: 0px;
+	line-height: 0em;
+	border: 2px solid white;
+
+	&:hover {
+		border: 2px solid red;
+		color: red;
+	}
+}
+
+.cancel.showInline {
+	display: inline-block;
+}
+
+
 
 .adminWrapper {
 	margin-top: 120px;
@@ -121,9 +147,14 @@ nav {
 
 	table {
 
+		tr:nth-child(even){
+			background: #eee;
+		}
+
 		th {
+			padding-left: 10px;	
 			min-width: 175px;
-			max-width: 275px;
+			max-width: 405px;
 		}
 	}
 
