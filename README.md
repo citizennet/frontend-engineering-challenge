@@ -2,7 +2,7 @@
 This is MEAN Stack app that can be run nightly. It pulls information from an API and caches the information for later display.
 
 ## Pages
-Main pages are /admin and /dashboard
+Main pages are /admin and /dashboard  
 
 ## Configuration
 ### Client
@@ -16,13 +16,13 @@ Sass
 ngRoute  
 ### Server
 **Database**  
-MongoDB  
+MongoDB via MongoLab
 **Authentication**  
 Nope, Not this time around  
 
 ## Intructions for local development
-Run `npm install` to install dependencies
-Run `bower install` to install bower components
+Run `npm install` to install dependencies  
+Run `bower install` to install bower components  
 Run `grunt` to run tasks and compile assets  
 Run `grunt server` to view environment on screen
 
