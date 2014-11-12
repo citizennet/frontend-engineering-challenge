@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<TITLE>
+			Interview Exercise | CitizenNet
+		</title>
+	</head>
+		<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+		<script type="text/javascript">
+		var displayTablePosts = '';												//THIS VARIABLE WILL DISPLAY THE JSON DATA FOR POSTS API
+		var displayTableLikes = '';												//THIS VARIABLE WILL DISPLAY THE JSON DATA FOR LIKES API
+		/*
+			THIS FUNCTION VALIDATES THE RESPONSE FROM THE USER AND FIRES AN AJAX REQUEST TO THE GIVEN API RESOURCES
+		*/
+		function validate(input){	
+			document.getElementById('wait').style.visibility = "visible";
+			document.getElementById('dataTable').style.visibility = "hidden";
+			var url = '';
+			if(input == 'posts'){
+				url = 'http://rack1.citizennet.com/interviewtest/api?file=posts.json&access_token=AAAAAL2uajO8BAPcqOwZB6';
+			} else if(input == 'likes') {
+				url = 'http://rack1.citizennet.com/interviewtest/api?file=likes.json&access_token=AAAAAL2uajO8BAPcqOwZB6';
+			} else {
+				alert('Wrong input');
+			}
+			//AJAX FUNCTIONALITY STARTS HERE
+			if(window.XMLHttpRequest){
+				req= new XMLHttpRequest();
+			} else {
+				if(window.ActiveXObject)
+					req=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			
+			if(req){
+				if(input == 'posts'){
+					req.onreadystatechange = callbackPosts;
+				} else {
+					req.onreadystatechange = callbackLikes;
+				}
+				req.open("GET", url, true);
+				req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
+				req.send("");
+			} else {
+				alert("Sorry, but I could not create an XMLHttpRequest");
+			}
+		}
+		
+		function callbackPosts(){
+			var dataJSON;
+			if (req.readyState == 4){
+				if(req.status == 503){												//THIS WILL HANDLE BAD WIRING AND WILL FIRE AJAX QUERY UNTIL THE DATA IS RETRIEVED
+					validate('posts');
+				} else if(req.status == 200){
+					dataJSON = eval('(' + req.responseText + ')');
+					validate('likes');												//THIS WILL FIRE AJAX QUERY FOR LIKES API
+				}
+			} 
+			displayTablePosts = '<table width = "100%" border = "25" bordercolor = "416ED7" style = "border-collapse: separate;">';
+			if(!dataJSON.data[0].error){											//ALL THE DATA IS SORTED IN ORDER TO DISPLAY IN YUI TABLE
+				for(var j = 0; j < dataJSON.data.length; j++){
+					var userId, fromName, fromCategory, fromId, message, picture, link, name, caption;
+					var description, icon, actions, type, appName, appId, createdTime, updatedTime;
+					if(typeof(dataJSON.data[j].id) === 'undefined'){
+						userId = 'Unavailable';
+					} else {
+						userId = dataJSON.data[j].id;
+					}
+					displayTablePosts += '<tr><th colspan = "2"><div style = "float:left">Sr. No.: ' + (j+1) + '</div><div>ID : ' + userId + '</div></th></tr>';
+					if(!(typeof(dataJSON.data[j].from) === 'undefined')){
+						fromName = dataJSON.data[j].from.name;
+						fromCategory = dataJSON.data[j].from.category;
+						fromId = dataJSON.data[j].from.id;
+						displayTablePosts += '<tr><td><b>From</b></td><td><b>Name : </b>' + fromName + '<br/><b>Category : </b>' + fromCategory + '<br/><b>Id : </b>' + fromId + '</td></tr>';
+					} else {
+						fromName = 'Unavailable';
+						fromCategory = 'Unavailable';
+						fromId = 'Unavailable';
+						displayTablePosts += '<tr><b>From</b></td><td><b>Name : </b>' + fromName + '<br/><b>Category : </b>' + fromCategory + '<br/><b>Id : </b>' + fromId + '</td></tr>';
+					}
+					if(!(typeof(dataJSON.data[j].message) === 'undefined')){
+						message = dataJSON.data[j].message;
+					} else {
+						message = 'Unavailable';
+					}
+					if(!(typeof(dataJSON.data[j].picture) === 'undefined')){
+						picture = dataJSON.data[j].picture;	
+					}
+					if(!(typeof(dataJSON.data[j].link) === 'undefined')){
+						link = dataJSON.data[j].link;
+					} else {
+						link = 'Unavailable';
+					}
+					if(!(typeof(dataJSON.data[j].name) === 'undefined')){
+						name = dataJSON.data[j].name;
+					} else {
+						name = 'Unavailable';
+					}
+					if(!(typeof(dataJSON.data[j].caption) === 'undefined')){
+						caption = dataJSON.data[j].caption;
+					} else {
+						caption = 'Unavailable';
+					}
+					if(!(typeof(dataJSON.data[j].description) === 'undefined')){
+						description = dataJSON.data[j].description;
+					} else {
+						description = 'Unavailable';
+					}
+					if(!(typeof(dataJSON.data[j].icon) === 'undefined')){
+						icon = dataJSON.data[j].icon;
+					}
+					if(!(typeof(dataJSON.data[j].actions) === 'undefined')){
+						actions = dataJSON.data[j].actions;
+					} else {
+						actions = 'Unavailable';
+					}
+					var actionItem = '';
+					if(actions.length == null) {
+						actionItem += "No Likes or Comments";
+					} else {
+						actionItem = '<ul>	';
+						for(var i = 0; i < actions.length; i++) {
+							actionItem += "<li><a target='_blank' href='" + actions[i].link +"'>" + actions[i].name +"</a></li>";
+						}
+					}
+					actionItem += "</ul>";
+					if(!(typeof(dataJSON.data[j].type) === 'undefined')){
+						type = dataJSON.data[j].type;
+					} else {
+						type = 'Unavailable';
+					}
+					if(!(typeof(dataJSON.data[j].status_type) === 'undefined')){
+						statusType = dataJSON.data[j].status_type;
+					} else {
+						statusType = 'Unavailable';
+					}
+					if(!(typeof(dataJSON.data[j].application) === 'undefined')){
+						appName = dataJSON.data[j].application.name;
+						appId = dataJSON.data[j].application.id;
+					} else {
+						appName = 'No name for application.';
+						appId = 'No ID for application';
+					}
+					if(!(typeof(dataJSON.data[j].created_time) === 'undefined')){
+						createdTime = dataJSON.data[j].created_time;
+					} else {
+						createdTime = 'Unavailable';
+					}
+					if(!(typeof(dataJSON.data[j].updated_time) === 'undefined')){
+						updatedTime = dataJSON.data[j].updated_time;
+					} else {
+						updatedTime = 'Unavailable';
+					}
+					var likesItem = '', likesCount;
+					if(typeof(dataJSON.data[j].likes) === 'undefined'){
+						likesCount = '0';
+					} else {
+						likesCount = dataJSON.data[j].likes.count;
+					}
+					
+					displayLikes = '<tr><td rowspan = "' + (likesCount - 1) + '"><b>Likes Details : </b><br/>(No. of Likes : ' + likesCount + ')</td>';
+					if(likesCount != '0'){
+						likesData = dataJSON.data[j].likes.data;
+						for(var i = 0; i < likesData.length; i++){
+							if(i == 0){
+								displayLikes += '<td><b>Name : </b>' + likesData[i].name + '<br/><b> Category : </b>' + likesData[i].category + '<br/><b> ID : </b>' + likesData[i].id + '</td></tr>';
+							} else {
+								displayLikes += '<tr><td><b>Name : </b>' + likesData[i].name + '<br/><b> Category : </b>' + likesData[i].category + '<br/><b> ID : </b>' + likesData[i].id + '</td></tr>';
+							}
+						}
+					} else {
+						displayLikes = '<tr><td><b>Likes Details : </b></td><td>No Likes</td></tr>';
+					}
+					var commentsItem = '', commentsCount;
+					if(typeof(dataJSON.data[j].comments) === 'undefined'){
+						commentsCount = '0';
+					} else {
+						commentsCount = dataJSON.data[j].comments.count;
+					}
+					displayComments = '<tr><td rowspan = "' + (commentsCount - 1) + '"><b>Comment Details : </b><br/>(No. of Comments : ' + commentsCount + ')</td>';
+					if(commentsCount != '0'){
+						commentsData = dataJSON.data[j].comments.data;
+						for(var i = 0; i < commentsData.length; i++){
+							if(i == 0){
+								displayComments += '<td><b>ID : </b>' + commentsData[i].id + '<br/><b> From : (Name : </b>' + commentsData[i].from.name + '<b>, ID : </b>' + commentsData[i].from.id + '<b>)<br>Message : </b>' + commentsData[i].message + '<br/><b> Created-Time : </b>' + commentsData[i].created_time + '</td></tr>';
+							} else {
+								displayComments += '<tr><td><b>ID : </b>' + commentsData[i].id + '<br/><b> From : (Name : </b>' + commentsData[i].from.name + '<br/><b>, ID : </b>' + commentsData[i].from.id + '<br/><b>) Message : </b>' + commentsData[i].message + '<br/><b> Created-Time : </b>' + commentsData[i].created_time + '</td></tr>';
+							}
+						}
+					} else {
+						displayComments = '<tr><td><b>Comment Details : </b></td><td>No Comments</td></tr>';
+					}
+					displayTablePosts += '<tr><td width = "25%"><b>Message : </b></td><td align = "left" width = "75%">' + message + '</td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>Link : </b></td><td width = "75%" align = "left"><a href = "' + link + '">' + link + '</a></td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>Name : </b></td><td width = "75%" align = "left">' + name + '</td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>Caption : </b></td><td width = "75%" align = "left">' + caption + '</td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>Description : </b></td><td width = "75%" align = "left">' + description + '</td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>Picture : </b></td><td width = "75%" align = "left"><img src = "' + picture + '" alt = "Picture not found" height = "100px" width = "100px"></td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>Icon : </b></td><td width = "75%" align = "left"><img src = "' + icon + '" alt = "Picture not found" height = "25px" width = "25px"></td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>Actions : </b></td><td width = "75%" align = "left">' + actionItem + '</td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>Type : </b></td><td width = "75%" align = "left">' + type + '</td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>Status Type : </b></td><td width = "75%" align = "left">' + statusType + '</td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>App Name : </b></td><td width = "75%" align = "left">' + appName + '</td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>App Id : </b></td><td width = "75%" align = "left">' + appId + '</td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>Created Time : </b></td><td width = "75%" align = "left">' + createdTime + '</td></tr>';
+					displayTablePosts += '<tr><td width = "25%"><b>Updated Time : </b></td><td width = "75%" align = "left">' + updatedTime + '</td></tr>';
+					displayTablePosts += displayLikes;
+					displayTablePosts += displayComments;
+					if(j !== dataJSON.data.length - 1){
+						displayTablePosts += '<tr style = "background-color: #416ED7; height: 25px"><td colspan = "2"></td></tr>';
+					}
+				}
+				displayTablePosts += '</table>';
+			}
+		}
+		
+		function callbackLikes(){
+			var dataJSON;
+			if (req.readyState == 4){
+				if(req.status == 503){													//HANDLES BAD WIRING FOR LIKES API
+					validate('likes');
+				} else if(req.status == 200){
+					dataJSON = eval('(' + req.responseText + ')');
+				}
+			}
+			displayTableLikes = '<table width = "100%" border = "25" bordercolor = "416ED7" style = "border-collapse: separate;">';
+			if(!dataJSON.data[0].error){
+				for(var j = 0; j < dataJSON.data.length; j++){
+					var name, category, id;
+					if(!(typeof(dataJSON.data[j].name) === 'undefined')){
+						name = dataJSON.data[j].name;
+					} else {
+						name = 'Unavailable';
+					}
+					if(!(typeof(dataJSON.data[j].category) === 'undefined')){
+						category = dataJSON.data[j].category;
+					} else {
+						category = 'Unavailable';
+					}
+					if(!(typeof(dataJSON.data[j].id) === 'undefined')){
+						id = dataJSON.data[j].id;
+					} else {
+						id = 'Unavailable';
+					}
+					displayTableLikes += '<tr><td rowspan = "3"><b>Sr No. ' + (j+1) + '</b></td><td><b>Name : </b>' + name + '</td></tr>';
+					displayTableLikes += '<tr><td><b>Category : </b>' + category + '</td></tr>';
+					displayTableLikes += '<tr><td><b>Id : </b>' + id + '</td></tr>';
+					if(j !== dataJSON.data.length - 1){
+						displayTableLikes += '<tr style = "background-color: #416ED7; height: 25px"><td colspan = "2"></td></tr>';
+					}
+				}
+				displayTableLikes += '</table>';
+				displayYUITable(displayTablePosts, displayTableLikes);
+			}
+		}
+		/*
+			THIS FUNCTION DISPLAYS THE YUI TABLE FILLED WITH THE RETRIEVED VALUES. YUI IS USED FOR DISPLAY PURPOSES.
+		*/
+		function displayYUITable(displayPosts, displayLikes){
+			document.getElementById('wait').style.visibility = "hidden";
+			document.getElementById('dataTable').style.visibility = "visible";
+			document.getElementById('dataTable').innerHTML = '';
+			YUI().use('tabview','autocomplete', 'autocomplete-highlighters','node','event','autocomplete-filters', function (Y) {
+				var tabview = new Y.TabView({
+					children: [{
+						label: 'Posts JSON Data',
+						content: displayPosts
+					}, 
+					{
+						label: 'Likes JSON Data',
+						content: displayLikes
+					}]
+				});
+				tabview.render('#dataTable');
+				Y.one('body').addClass('yui3-skin-sam');
+			});
+		}
+	</script>
+	<body class="yui3-skin-sam">
+		<form name = "exercise" method="POST" action="#"  onsubmit="return validate();">
+			<center><h1>Click the button "Get Info" to retrieve data : </h1>
+				<input type="button" class="" id="posts" name="posts" value="Get info" onClick="validate('posts')">
+			</center>
+		</form>
+		<br/><br/>
+		<center>
+			<div id = "wait" style = "visibility : hidden"><h4>Please wait while the data loads...</h4></div>
+		</center>
+		<div id = "dataTable" style = "visibility : visible">
+		</div>
+	</body>
+</html>

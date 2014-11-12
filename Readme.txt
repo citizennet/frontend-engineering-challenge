@@ -1,0 +1,1 @@
+The code has been tested on Chrome and Internet Explorer. Display might differ for other browsers. Also, all the coding was possible using Javascript, Jquery and CSS itself. A single program handles both the ajax requests and retrieves the JSON data. YUI tabview (external library) is used in order to display data in a tabular format with tabs for each API resource JSON data. 
