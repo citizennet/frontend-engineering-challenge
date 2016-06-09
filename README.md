@@ -28,6 +28,6 @@ Here's what your web-based application must do:
 1. css
 
 ## API Resources:
-1. http://rack1.citizennet.com/interviewtest/api?file=posts.json&access_token=AAAAAL2uajO8BAPcqOwZB6
-1. http://rack1.citizennet.com/interviewtest/api?file=likes.json&access_token=AAAAAL2uajO8BAPcqOwZB6
+1. http://rack1.citizennet.com/interviewtest/api.php?file=posts.json&access_token=AAAAAL2uajO8BAPcqOwZB6
+1. http://rack1.citizennet.com/interviewtest/api.php?file=likes.json&access_token=AAAAAL2uajO8BAPcqOwZB6
 
